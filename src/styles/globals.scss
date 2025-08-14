@@ -1,12 +1,9 @@
+// Import component-specific styles
+@use "./index.scss";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-// Import component-specific styles
-@import "./layout.scss";
-@import "./typography.scss";
-@import "./utilities.scss";
-@import "./animations.scss";
 
 // Custom CSS variables
 :root {

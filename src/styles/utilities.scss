@@ -1,41 +1,42 @@
-// Icon container styles
+// Custom utilities that extend TailwindCSS functionality
+
+// Icon container utilities
 .icon-container {
     @apply flex items-center justify-center h-16 w-16 rounded-full bg-blue-500/20 text-blue-400 mx-auto mb-4;
 }
 
-// Responsive utilities
-.mobile-only {
-    @apply block md:hidden;
+// Custom spacing utilities (only if needed)
+.space-y-2 > * + * {
+    @apply mt-2;
 }
 
-.desktop-only {
-    @apply hidden md:block;
+.space-y-4 > * + * {
+    @apply mt-4;
 }
 
-// Animation utilities
-.fade-in {
-    @apply animate-in fade-in duration-500;
+.space-y-6 > * + * {
+    @apply mt-6;
 }
 
-.slide-up {
-    @apply animate-in slide-in-from-bottom-4 duration-500;
+.space-y-8 > * + * {
+    @apply mt-8;
 }
 
-// Background utilities
-.bg-section-dark {
-    @apply bg-gray-900;
+// Custom background utilities (only if needed)
+.bg-gradient-dark {
+    @apply bg-gradient-to-br from-gray-900 to-gray-800;
 }
 
-.bg-section-light {
-    @apply bg-gray-800;
+.bg-card {
+    @apply bg-gray-800 border border-gray-700;
 }
 
-// Border utilities
-.border-section {
-    @apply border-t border-gray-700;
-}
-
-// Focus styles
+// Custom focus ring utility (if needed)
 .focus-ring {
     @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900;
+}
+
+// Custom border utility (if needed)
+.border-top {
+    @apply border-t border-gray-700;
 }

@@ -1,7 +1,28 @@
 .formInput {
-    @apply w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500;
+    width: 100%;
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    color: white;
+    outline: none;
+}
+
+.formInput:focus {
+    box-shadow: 0 0 0 2px #3b82f6;
 }
 
 .formTextarea {
-    @apply form-input resize-none;
+    width: 100%;
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    color: white;
+    outline: none;
+    resize: none;
+}
+
+.formTextarea:focus {
+    box-shadow: 0 0 0 2px #3b82f6;
 }

@@ -1,20 +1,28 @@
 .navLink {
-    @apply relative transition-colors duration-300;
+    position: relative;
+    transition: color 0.3s;
 
     &::after {
         content: "";
-        @apply absolute w-0 h-0.5 bottom-[-4px] left-1/2 transform -translate-x-1/2 bg-blue-500 transition-all duration-300;
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #3b82f6;
+        transition: width 0.3s;
     }
 
     &:hover::after {
-        @apply w-full;
+        width: 100%;
     }
 }
 
 .mobileMenu {
-    @apply hidden;
+    display: none;
 }
 
 .mobileMenuOpen {
-    @apply block;
+    display: block;
 }

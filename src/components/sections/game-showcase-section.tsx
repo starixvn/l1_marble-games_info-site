@@ -33,7 +33,7 @@ const GameShowcaseSection: React.FC<GameShowcaseProps> = ({ title, subtitle, gam
                     ))}
 
                     {/* Demo Links Section */}
-                    <div className="col-span-3 text-center mt-12">
+                    <div className="md:col-span-3 text-center mt-12">
                         <h3 className="heading-md text-white mb-4">Try Our Demo Games Now</h3>
                         <p className="text-gray-400 mb-4">Play for free on:</p>
                         <div className="flex flex-wrap justify-center gap-4">
