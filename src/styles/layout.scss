@@ -1,0 +1,30 @@
+// Section spacing
+.section-padding {
+    @apply py-16 md:py-24;
+}
+
+.section-padding-sm {
+    @apply py-12 md:py-16;
+}
+
+// Container
+.container-custom {
+    @apply container mx-auto px-6;
+}
+
+// Grid layouts
+.grid-strengths {
+    @apply grid md:grid-cols-4 gap-8;
+}
+
+.grid-services {
+    @apply grid lg:grid-cols-2 gap-8 items-start;
+}
+
+.grid-showcase {
+    @apply grid md:grid-cols-3 gap-8;
+}
+
+.grid-about {
+    @apply grid md:grid-cols-3 gap-8 text-center;
+}

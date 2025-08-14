@@ -1,0 +1,367 @@
+# Cursor Rules for Info Site Project
+
+## Project Overview
+
+This is a Next.js 15+ project using App Router with TypeScript, TailwindCSS, and modern React patterns. The project follows a clean, organized structure for building an information website.
+
+## Project Structure
+
+```
+project-root/
+├── public/                     # Static files (images, favicon, robots.txt, etc.)
+│   ├── images/                # Static images
+│   └── icons/                 # SVG or PNG icons
+├── src/
+│   ├── app/                   # Next.js App Router (Next 13+)
+│   ├── components/            # Reusable UI components
+│   │   ├── common/            # Shared components (Header, Footer)
+│   │   │   ├── header/        # Header component folder
+│   │   │   │   ├── index.tsx  # Main component file
+│   │   │   │   └── header.module.scss # Component styles
+│   │   │   └── footer/        # Footer component folder
+│   │   │       ├── index.tsx  # Main component file
+│   │   │       └── footer.module.scss # Component styles
+│   │   ├── sections/          # Page sections (Hero, About, Services, etc.)
+│   │   │   ├── hero-section/  # Hero section folder
+│   │   │   │   ├── index.tsx  # Main component file
+│   │   │   │   └── hero-section.module.scss # Component styles
+│   │   │   └── contact-section/ # Contact section folder
+│   │   │       ├── index.tsx  # Main component file
+│   │   │       └── contact-section.module.scss # Component styles
+│   │   └── ui/                # Atomic UI components (Button, Input, Card, etc.)
+│   │       ├── button/        # Button component folder
+│   │       │   ├── index.tsx  # Main component file
+│   │       │   └── button.module.scss # Component styles
+│   │       ├── card/          # Card component folder
+│   │       │   ├── index.tsx  # Main component file
+│   │   │   └── card.module.scss # Component styles
+│   │       └── input/         # Input component folder
+│   │           ├── index.tsx  # Main component file
+│   │           └── input.module.scss # Component styles
+│   ├── contexts/              # React Context (global state)
+│   ├── hooks/                 # Custom hooks
+│   ├── types/                 # TypeScript types/interfaces
+│   ├── utils/                 # Utility functions (helpers)
+│   └── styles/                # SCSS organization and global styles
+│       ├── index.scss         # Main entry point - imports all styles
+│       ├── globals.scss       # Global styles (CSS variables, base styles)
+│       ├── layout.scss        # Layout utilities (spacing, containers, grids)
+│       ├── typography.scss    # Typography classes (headings, text styles)
+│       ├── utilities.scss     # Utility classes (icons, responsive, animations)
+│       ├── animations.scss    # Custom animations and keyframes
+│       └── components/        # Component-specific styles
+│           ├── sections/      # Section component styles
+│           ├── ui/            # UI component styles
+│           └── common/        # Common component styles
+├── tailwind.config.ts         # TailwindCSS configuration
+├── postcss.config.js          # PostCSS configuration
+├── tsconfig.json              # TypeScript configuration
+├── package.json
+└── next.config.js             # Next.js configuration
+```
+
+## Technology Stack
+
+-   **Framework**: Next.js 15+ with App Router
+-   **Language**: TypeScript
+-   **Styling**: TailwindCSS + SCSS (modular architecture)
+-   **State Management**: React Context + Custom Hooks
+-   **Build Tool**: Vite (via Next.js)
+
+## Coding Standards
+
+### TypeScript
+
+-   Use strict TypeScript configuration
+-   Define proper interfaces and types in `src/types/`
+-   Avoid `any` type - use proper typing
+-   Use type inference when possible
+-   Export types from `src/types/index.d.ts`
+
+### React Components
+
+-   Use functional components with hooks
+-   Follow React 18+ best practices
+-   Use proper prop typing with interfaces
+-   Implement proper error boundaries
+-   Use React.memo() for performance optimization when needed
+
+### File Naming Conventions
+
+-   **Components**: kebab-case (e.g., `hero-section.tsx`, `contact-form.tsx`)
+-   **Hooks**: camelCase with `use` prefix (e.g., `useTheme.ts`, `useWindowSize.ts`)
+-   **Utils**: camelCase (e.g., `formatDate.ts`, `validateEmail.ts`)
+-   **Types**: camelCase (e.g., `userTypes.ts`, `apiTypes.ts`)
+-   **Constants**: UPPER_SNAKE_CASE (e.g., `API_ENDPOINTS.ts`)
+-   **SCSS Files**: kebab-case (e.g., `hero-section.scss`, `button.scss`)
+
+### Component Structure
+
+```typescript
+// src/components/sections/hero-section/index.tsx
+import React from "react";
+import { HeroSectionProps } from "@/types";
+import styles from "./hero-section.module.scss"; // Import component styles
+
+export const HeroSection: React.FC<HeroSectionProps> = ({ title, description }) => {
+    return <section className={styles.heroSection}>{/* Component content */}</section>;
+};
+```
+
+### Import/Export Patterns
+
+-   Use absolute imports with `@/` alias (configured in tsconfig.json)
+-   Group imports: React, external libraries, internal modules, types
+-   Use named exports for components and functions
+-   Use default exports only for pages and layouts
+-   Import SCSS modules in components: `import styles from './component-name.module.scss'`
+-   Use CSS modules for scoped styling: `className={styles.componentClass}`
+
+### Styling Guidelines
+
+-   **SCSS Architecture**: Use modular SCSS where each component has its own folder
+-   **Component Structure**: Each component folder contains `index.tsx` and `component-name.module.scss`
+-   **CSS Modules**: Use CSS modules for scoped styling to prevent style conflicts
+-   **Global Styles**: Keep `globals.scss` minimal - only CSS variables, base styles, scrollbar, print styles
+-   **Component Styles**: Each component should import its own SCSS module
+-   **Utility Styles**: Organize common styles into logical files (layout, typography, utilities, animations)
+-   **TailwindCSS**: Use utility classes as primary styling method with `@apply` for custom components
+-   **CSS Variables**: Use CSS custom properties for theme values
+-   **Responsive Design**: Follow mobile-first approach with Tailwind responsive prefixes
+
+### SCSS Organization Rules
+
+#### File Structure
+
+```
+src/styles/
+├── index.scss              # Main entry point - imports all styles
+├── globals.scss            # Global styles only (variables, base, scrollbar)
+├── layout.scss             # Layout utilities (spacing, containers, grids)
+├── typography.scss         # Typography classes (headings, text styles)
+├── utilities.scss          # Utility classes (icons, responsive, animations)
+├── animations.scss         # Custom animations and keyframes
+└── components/             # Component-specific styles
+    ├── sections/           # Section component styles
+    │   ├── hero-section.module.scss
+    │   └── contact-section.module.scss
+    ├── ui/                 # UI component styles
+    │   ├── button.module.scss
+    │   ├── card.module.scss
+    │   └── input.module.scss
+    └── common/             # Common component styles
+        ├── header.module.scss
+        └── footer.module.scss
+```
+
+#### Component SCSS Rules
+
+-   Create component folder with same name as component
+-   Place `index.tsx` (main component) and `component-name.module.scss` in component folder
+-   Use descriptive class names that match component
+-   Import SCSS module in component: `import styles from './component-name.module.scss'`
+-   Use CSS modules for scoped styling: `className={styles.componentClass}`
+-   Add SCSS import to `src/styles/index.scss` for global availability
+
+#### Utility SCSS Rules
+
+-   Use `layout.scss` for spacing, containers, grid layouts
+-   Use `typography.scss` for text styles, headings, gradients
+-   Use `utilities.scss` for icons, responsive helpers, focus styles
+-   Use `animations.scss` for keyframes, animation classes, hover effects
+
+### State Management
+
+-   Use React Context for global state (theme, user preferences)
+-   Use local state with useState for component-specific state
+-   Use useReducer for complex state logic
+-   Implement proper state persistence when needed
+
+### Performance Best Practices
+
+-   Use Next.js Image component for optimized images
+-   Implement proper lazy loading for components
+-   Use React.memo() and useMemo() strategically
+-   Optimize bundle size with dynamic imports
+-   Use proper caching strategies
+-   Use CSS modules for scoped styling to prevent style conflicts
+-   Import SCSS modules only where needed to avoid unused CSS
+
+### Error Handling
+
+-   Implement proper error boundaries
+-   Use try-catch blocks in async operations
+-   Provide meaningful error messages to users
+-   Log errors appropriately for debugging
+
+### Testing Considerations
+
+-   Write testable code with proper separation of concerns
+-   Use descriptive component and function names
+-   Implement proper prop validation
+-   Keep components pure and predictable
+
+### Accessibility
+
+-   Use semantic HTML elements
+-   Implement proper ARIA labels
+-   Ensure keyboard navigation support
+-   Maintain proper color contrast ratios
+-   Use proper heading hierarchy
+
+### SEO Optimization
+
+-   Use Next.js built-in SEO features
+-   Implement proper meta tags
+-   Use semantic HTML structure
+-   Optimize for Core Web Vitals
+-   Implement proper sitemap and robots.txt
+
+## File Organization Rules
+
+### Components Directory
+
+-   `common/`: Shared components used across multiple pages
+-   Each component has its own folder (e.g., `header/`, `footer/`)
+-   Each folder contains `index.tsx` and `component-name.module.scss`
+-   `sections/`: Page-specific sections (Hero, Features, Contact, etc.)
+-   Each section has its own folder (e.g., `hero-section/`, `contact-section/`)
+-   Each folder contains `index.tsx` and `component-name.module.scss`
+-   `ui/`: Atomic UI components (Button, Input, Modal, etc.)
+-   Each component has its own folder (e.g., `button/`, `card/`, `input/`)
+-   Each folder contains `index.tsx` and `component-name.module.scss`
+
+### Styles Directory
+
+-   `index.scss`: Main entry point that imports all styles
+-   `globals.scss`: Only truly global styles (variables, base, scrollbar, print)
+-   `layout.scss`: Layout utilities and grid systems
+-   `typography.scss`: Text styles and typography classes
+-   `utilities.scss`: Helper classes and utility functions
+-   `animations.scss`: Custom animations and keyframes
+-   `components/`: Component-specific styles organized by component type
+
+### Hooks Directory
+
+-   Keep hooks focused and single-purpose
+-   Use descriptive names that indicate their purpose
+-   Implement proper cleanup in useEffect hooks
+-   Return proper types from custom hooks
+
+### Utils Directory
+
+-   Keep utility functions pure and testable
+-   Use proper error handling
+-   Implement proper input validation
+-   Export functions individually for tree-shaking
+
+### Types Directory
+
+-   Group related types in separate files
+-   Use descriptive interface names
+-   Implement proper generic types when needed
+-   Export all types from index.d.ts
+
+## Development Workflow
+
+1. Create new component folder in appropriate directories
+2. Create `index.tsx` (main component) and `component-name.module.scss` in component folder
+3. Import SCSS module in component: `import styles from './component-name.module.scss'`
+4. Use CSS modules for styling: `className={styles.componentClass}`
+5. Add SCSS import to `src/styles/index.scss`
+6. Define types before implementing components
+7. Use TailwindCSS classes for styling
+8. Implement proper error handling
+9. Test components in different screen sizes
+10. Ensure accessibility compliance
+11. Optimize for performance
+
+## Common Patterns
+
+### Theme Context
+
+```typescript
+// src/contexts/theme-context.tsx
+export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+
+export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+    // Theme logic
+};
+```
+
+### Custom Hooks
+
+```typescript
+// src/hooks/useTheme.ts
+export const useTheme = () => {
+    const context = useContext(ThemeContext);
+    if (!context) {
+        throw new Error("useTheme must be used within ThemeProvider");
+    }
+    return context;
+};
+```
+
+### Component with SCSS
+
+```typescript
+// src/components/ui/button/index.tsx
+import React from "react";
+import { ButtonProps } from "@/types";
+import styles from "./button.module.scss"; // Import component styles
+
+export const Button: React.FC<ButtonProps> = ({ children, className }) => (
+    <button className={`${styles.btnPrimary} ${className}`}>{children}</button>
+);
+```
+
+```scss
+// src/components/ui/button/button.module.scss
+.btnPrimary {
+    @apply bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300;
+
+    &:hover {
+        @apply bg-blue-700;
+    }
+}
+```
+
+### API Utilities
+
+```typescript
+// src/utils/api.ts
+export const apiClient = {
+    get: async <T>(url: string): Promise<T> => {
+        // API logic
+    },
+};
+```
+
+## Dependencies to Avoid
+
+-   Avoid jQuery or other DOM manipulation libraries
+-   Avoid CSS-in-JS solutions (use TailwindCSS + SCSS modules)
+-   Avoid heavy animation libraries unless necessary
+-   Avoid unnecessary state management libraries
+
+## Performance Targets
+
+-   First Contentful Paint: < 1.5s
+-   Largest Contentful Paint: < 2.5s
+-   Cumulative Layout Shift: < 0.1
+-   First Input Delay: < 100ms
+
+## Browser Support
+
+-   Modern browsers (Chrome 90+, Firefox 88+, Safari 14+)
+-   Mobile browsers (iOS Safari 14+, Chrome Mobile 90+)
+-   Progressive enhancement for older browsers
+
+## Build and Deployment
+
+-   Use Next.js built-in optimization features
+-   Implement proper environment variable handling
+-   Use proper build caching strategies
+-   Optimize for Vercel deployment
+
+Remember: Keep code clean, readable, and maintainable. Follow React and TypeScript best practices, use modular SCSS architecture with CSS modules, and always consider performance and accessibility in your implementations.

@@ -1,0 +1,11 @@
+.btnPrimary {
+    @apply bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300;
+    
+    &:hover {
+        @apply bg-blue-700;
+    }
+}
+
+.btnPrimaryLg {
+    @apply btn-primary font-bold py-3 px-8 rounded-full text-lg;
+}

@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Import component-specific styles
+@import "./layout.scss";
+@import "./typography.scss";
+@import "./utilities.scss";
+@import "./animations.scss";
+
+// Custom CSS variables
+:root {
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
+    --background-dark: #111827;
+    --background-card: #1f2937;
+    --border-color: #374151;
+    --text-primary: #e5e7eb;
+    --text-secondary: #9ca3af;
+    --text-muted: #6b7280;
+}
+
+// Base styles
+body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-primary);
+}
+
+// Scrollbar styles
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+// Print styles
+@media print {
+    .no-print {
+        display: none !important;
+    }
+}

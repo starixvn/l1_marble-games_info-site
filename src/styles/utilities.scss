@@ -1,0 +1,41 @@
+// Icon container styles
+.icon-container {
+    @apply flex items-center justify-center h-16 w-16 rounded-full bg-blue-500/20 text-blue-400 mx-auto mb-4;
+}
+
+// Responsive utilities
+.mobile-only {
+    @apply block md:hidden;
+}
+
+.desktop-only {
+    @apply hidden md:block;
+}
+
+// Animation utilities
+.fade-in {
+    @apply animate-in fade-in duration-500;
+}
+
+.slide-up {
+    @apply animate-in slide-in-from-bottom-4 duration-500;
+}
+
+// Background utilities
+.bg-section-dark {
+    @apply bg-gray-900;
+}
+
+.bg-section-light {
+    @apply bg-gray-800;
+}
+
+// Border utilities
+.border-section {
+    @apply border-t border-gray-700;
+}
+
+// Focus styles
+.focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900;
+}
