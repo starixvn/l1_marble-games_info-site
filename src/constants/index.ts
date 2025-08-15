@@ -65,8 +65,8 @@ export const GAMES: GameShowcase[] = [
 
 // Demo links
 export const DEMO_LINKS = {
-    sabaSports: "#",
-    sabaPlay: "#",
+    sabaSports: "#saba-sports-demo",
+    sabaPlay: "#saba-play-demo",
 };
 
 // About section data
@@ -94,9 +94,9 @@ export const ABOUT_DATA: AboutSection = {
 
 // Social links
 export const SOCIAL_LINKS: SocialLink[] = [
-    { href: "#", label: "Facebook" },
-    { href: "#", label: "Twitter" },
-    { href: "#", label: "LinkedIn" },
+    { href: "#facebook", label: "Facebook" },
+    { href: "#twitter", label: "Twitter" },
+    { href: "#linkedin", label: "LinkedIn" },
 ];
 
 // Copyright text

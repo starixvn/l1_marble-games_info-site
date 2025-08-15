@@ -43,16 +43,13 @@ project-root/
 │   ├── types/                 # TypeScript types/interfaces
 │   ├── utils/                 # Utility functions (helpers)
 │   └── styles/                # SCSS organization and global styles
+│       ├── tailwind.css       # TailwindCSS directives
 │       ├── index.scss         # Main entry point - imports all styles
 │       ├── globals.scss       # Global styles (CSS variables, base styles)
 │       ├── layout.scss        # Layout utilities (spacing, containers, grids)
 │       ├── typography.scss    # Typography classes (headings, text styles)
 │       ├── utilities.scss     # Utility classes (icons, responsive, animations)
 │       ├── animations.scss    # Custom animations and keyframes
-│       └── components/        # Component-specific styles
-│           ├── sections/      # Section component styles
-│           ├── ui/            # UI component styles
-│           └── common/        # Common component styles
 ├── tailwind.config.ts         # TailwindCSS configuration
 ├── postcss.config.js          # PostCSS configuration
 ├── tsconfig.json              # TypeScript configuration

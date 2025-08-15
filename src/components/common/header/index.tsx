@@ -25,14 +25,20 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
 
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center space-x-8">
-                    {navLinks.map((link) =>
+                    {navLinks.map((link, index) =>
                         link.isButton ? (
-                            <Button key={link.href} href={link.href} variant="primary" size="sm" className="font-semibold">
+                            <Button
+                                key={`nav-button-${index}-${link.href}`}
+                                href={link.href}
+                                variant="primary"
+                                size="sm"
+                                className="font-semibold"
+                            >
                                 {link.label}
                             </Button>
                         ) : (
                             <a
-                                key={link.href}
+                                key={`nav-link-${index}-${link.href}`}
                                 href={link.href}
                                 className={`${styles.navLink} text-gray-300 hover:text-white`}
                                 onClick={closeMobileMenu}
@@ -64,9 +70,9 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
 
             {/* Mobile Menu */}
             <div className={`md:hidden ${isMobileMenuOpen ? styles.mobileMenuOpen : styles.mobileMenu}`}>
-                {navLinks.map((link) => (
+                {navLinks.map((link, index) => (
                     <a
-                        key={link.href}
+                        key={`mobile-nav-${index}-${link.href}`}
                         href={link.href}
                         className="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors"
                         onClick={closeMobileMenu}

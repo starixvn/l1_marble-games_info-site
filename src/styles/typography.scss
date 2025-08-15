@@ -1,5 +1,3 @@
-// Custom typography utilities that extend TailwindCSS
-
 .text-gradient {
     @apply bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent;
 }

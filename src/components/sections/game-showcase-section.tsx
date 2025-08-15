@@ -14,7 +14,7 @@ const GameShowcaseSection: React.FC<GameShowcaseProps> = ({ title, subtitle, gam
 
                 <div className="grid-showcase">
                     {games.map((game, index) => (
-                        <Card key={index} className="rounded-lg overflow-hidden">
+                        <Card key={`game-${index}-${game.title.toLowerCase().replace(/\s+/g, "-")}`} className="rounded-lg overflow-hidden">
                             <img
                                 src={game.image}
                                 alt={game.alt}

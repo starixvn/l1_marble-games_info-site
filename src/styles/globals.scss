@@ -1,10 +1,6 @@
 // Import component-specific styles
 @use "./index.scss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 // Custom CSS variables
 :root {
     --primary-color: #3b82f6;

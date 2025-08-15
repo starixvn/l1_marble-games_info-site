@@ -12,7 +12,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ title, subtitle, about }) =
 
                 <div className="max-w-4xl mx-auto grid-about">
                     {about.items.map((item, index) => (
-                        <div key={index}>
+                        <div key={`about-item-${index}-${item.title.toLowerCase().replace(/\s+/g, "-")}`}>
                             <h3 className="heading-md text-blue-400 mb-2">{item.title}</h3>
                             <p className="text-gray-400">{item.description}</p>
                         </div>

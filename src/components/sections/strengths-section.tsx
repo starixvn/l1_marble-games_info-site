@@ -14,12 +14,12 @@ interface StrengthsSectionProps {
     strengths: StrengthData[];
 }
 
-// Icon mapping for strengths
+// Icon mapping for strengths with unique keys
 const STRENGTH_ICONS = [
-    <StarIcon key="star" />,
-    <ChatIcon key="chat" />,
-    <LightningIcon key="lightning" />,
-    <TrendingIcon key="trending" />,
+    <StarIcon key="strength-star-icon" />,
+    <ChatIcon key="strength-chat-icon" />,
+    <LightningIcon key="strength-lightning-icon" />,
+    <TrendingIcon key="strength-trending-icon" />,
 ];
 
 const StrengthsSection: React.FC<StrengthsSectionProps> = ({ title, subtitle, strengths }) => {
@@ -33,8 +33,11 @@ const StrengthsSection: React.FC<StrengthsSectionProps> = ({ title, subtitle, st
 
                 <div className="grid-strengths">
                     {strengths.map((strength, index) => (
-                        <Card key={index} className="p-8 text-center hover">
-                            <div className="icon-container">{STRENGTH_ICONS[index] || <StarIcon />}</div>
+                        <Card
+                            key={`strength-${index}-${strength.title.toLowerCase().replace(/\s+/g, "-")}`}
+                            className="p-8 text-center hover"
+                        >
+                            <div className="icon-container">{STRENGTH_ICONS[index] || <StarIcon key="strength-default-icon" />}</div>
                             <h3 className="heading-md text-white mb-2">{strength.title}</h3>
                             <p className="text-gray-400">{strength.description}</p>
                         </Card>

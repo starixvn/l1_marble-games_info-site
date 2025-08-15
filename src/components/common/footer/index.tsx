@@ -8,9 +8,9 @@ const Footer: React.FC<FooterProps> = ({ socialLinks, copyright }) => {
             <div className="container mx-auto px-6 py-8 text-center text-gray-400">
                 {/* Social Media Links */}
                 <div className={`${styles.socialLinks} flex justify-center space-x-6 mb-4`}>
-                    {socialLinks.map((link) => (
+                    {socialLinks.map((link, index) => (
                         <a
-                            key={link.href}
+                            key={`social-${index}-${link.label.toLowerCase()}`}
                             href={link.href}
                             className={`${styles.socialLink} hover:text-white transition-colors duration-300`}
                             target="_blank"
