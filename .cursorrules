@@ -198,6 +198,32 @@ src/styles/
 -   Implement proper prop validation
 -   Keep components pure and predictable
 
+#### Test Structure (Arrange–Act–Assert)
+
+-   **Requirement**: Every test must explicitly follow the Arrange → Act → Assert pattern using comment markers.
+-   **Order**: `// Arrange`, `// Act`, `// Assert` (optional `// Cleanup` at the end if needed).
+-   **Clarity**: Do not interleave phases. Setup belongs under Arrange; the function/event under test runs in Act; only expectations in Assert.
+-   **Example**:
+
+```ts
+it("should handle startup error correctly", () => {
+    // Arrange
+    const locationSpy = jest.spyOn(globalThis, "location", "get").mockReturnValue({
+        pathname: "/test",
+    } as any);
+
+    // Act
+    const error = new Error("Test error");
+    onStartupError(error);
+
+    // Assert
+    expect(locationSpy).toHaveBeenCalled();
+
+    // Cleanup
+    locationSpy.mockRestore();
+});
+```
+
 ### Accessibility
 
 -   Use semantic HTML elements

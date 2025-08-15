@@ -10,14 +10,23 @@ describe("StrengthsSection Component", () => {
     ];
 
     it("renders title and subtitle", () => {
+        // Arrange
+
+        // Act
         render(<StrengthsSection title="Our Strengths" subtitle="Why choose us" strengths={strengths} />);
+
+        // Assert
         expect(screen.getByText("Our Strengths")).toBeInTheDocument();
         expect(screen.getByText("Why choose us")).toBeInTheDocument();
     });
 
     it("renders all strengths with titles and descriptions", () => {
+        // Arrange
+
+        // Act
         render(<StrengthsSection title="Title" subtitle="Subtitle" strengths={strengths} />);
 
+        // Assert
         for (const s of strengths) {
             expect(screen.getByText(s.title)).toBeInTheDocument();
             expect(screen.getByText(s.description)).toBeInTheDocument();

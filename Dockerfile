@@ -4,7 +4,7 @@ FROM hub.lumigame.com/docker-hub/library/node:18.14-alpine AS builder
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-COPY package.json yarn.lock .modprunerrc ./
+COPY package.json yarn.lock ./
 RUN yarn run reg && yarn install --production && npx mod-pruner prune --force 
 
 COPY . .

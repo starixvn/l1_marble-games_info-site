@@ -10,8 +10,12 @@ const mockNavLinks = [
 
 describe("Header Component", () => {
     it("renders brand and navigation links", () => {
+        // Arrange
+
+        // Act
         render(<Header navLinks={mockNavLinks} />);
 
+        // Assert
         // Brand
         expect(screen.getByRole("link", { name: /saba marble/i })).toBeInTheDocument();
 
@@ -23,8 +27,12 @@ describe("Header Component", () => {
     });
 
     it("toggles the mobile menu open and closed", () => {
+        // Arrange
+
+        // Act
         render(<Header navLinks={mockNavLinks} />);
 
+        // Assert
         // Find a link that exists inside the mobile menu (it shares anchors with desktop)
         // and scope to the container that has `md:hidden` (the mobile menu wrapper),
         // not the button wrapper.
@@ -47,8 +55,12 @@ describe("Header Component", () => {
     });
 
     it("renders nav links with correct hrefs", () => {
+        // Arrange
+
+        // Act
         render(<Header navLinks={mockNavLinks} />);
 
+        // Assert
         expect(screen.getAllByRole("link", { name: /home/i })[0]).toHaveAttribute("href", "#home");
         expect(screen.getAllByRole("link", { name: /about/i })[0]).toHaveAttribute("href", "#about");
         expect(screen.getAllByRole("link", { name: /contact/i })[0]).toHaveAttribute("href", "#contact");

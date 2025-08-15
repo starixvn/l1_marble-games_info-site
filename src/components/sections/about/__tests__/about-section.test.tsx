@@ -12,13 +12,23 @@ describe("AboutSection Component", () => {
     };
 
     it("renders title and subtitle", () => {
-        render(<AboutSection title={about.title} subtitle={about.subtitle} about={about as any} />);
+        // Arrange
+
+        // Act
+        render(<AboutSection title={about.title} subtitle={about.subtitle} about={about} />);
+
+        // Assert
         expect(screen.getByText(about.title)).toBeInTheDocument();
         expect(screen.getByText(about.subtitle)).toBeInTheDocument();
     });
 
     it("renders all about items with titles and descriptions", () => {
-        render(<AboutSection title="About" subtitle="Subtitle" about={about as any} />);
+        // Arrange
+
+        // Act
+        render(<AboutSection title="About" subtitle="Subtitle" about={about} />);
+
+        // Assert
         for (const item of about.items) {
             expect(screen.getByText(item.title)).toBeInTheDocument();
             expect(screen.getByText(item.description)).toBeInTheDocument();
@@ -26,8 +36,13 @@ describe("AboutSection Component", () => {
     });
 
     it("handles empty items gracefully", () => {
+        // Arrange
         const empty = { ...about, items: [] };
-        render(<AboutSection title="About" subtitle="Subtitle" about={empty as any} />);
+
+        // Act
+        render(<AboutSection title="About" subtitle="Subtitle" about={empty} />);
+
+        // Assert
         expect(screen.getByText("About")).toBeInTheDocument();
         expect(screen.getByText("Subtitle")).toBeInTheDocument();
     });
