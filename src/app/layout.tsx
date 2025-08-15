@@ -8,23 +8,32 @@ import SentryInit from "./sentry-init";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const title = "SABA Marble - The Future of RNG Marble Games";
+const description =
+    "SABA Marble is a revolutionary RNG-simulated sports game designed for fast-paced entertainment and betting. Perfect for sports lovers seeking instant action and quick wins.";
+const keywords = "SABA Marble, RNG games, sports betting, iGaming, marble games, sports simulation";
+const authors = [{ name: "SABA Marbles" }];
+
+const openGraph = {
+    title,
+    description: "Revolutionary RNG-simulated sports game for fast-paced entertainment and betting",
+    type: "website",
+    locale: "en_US",
+};
+
+const twitter = {
+    card: "summary_large_image",
+    title,
+    description,
+};
+
 export const metadata: Metadata = {
-    title: "SABA Marble - The Future of RNG Marble Games",
-    description:
-        "SABA Marble is a revolutionary RNG-simulated sports game designed for fast-paced entertainment and betting. Perfect for sports lovers seeking instant action and quick wins.",
-    keywords: "SABA Marble, RNG games, sports betting, iGaming, marble games, sports simulation",
-    authors: [{ name: "SABA Marbles" }],
-    openGraph: {
-        title: "SABA Marble - The Future of RNG Marble Games",
-        description: "Revolutionary RNG-simulated sports game for fast-paced entertainment and betting",
-        type: "website",
-        locale: "en_US",
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: "SABA Marble - The Future of RNG Marble Games",
-        description: "Revolutionary RNG-simulated sports game for fast-paced entertainment and betting",
-    },
+    title,
+    description,
+    keywords,
+    authors,
+    openGraph,
+    twitter,
     robots: "index, follow",
 };
 

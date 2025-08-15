@@ -22,7 +22,7 @@ import {
 } from "@/constants";
 import { ContactForm } from "@/types";
 
-export default function Home() {
+export default function Page() {
     const handleContactSubmit = (data: ContactForm) => {
         // Handle contact form submission
         console.log("Contact form submitted:", data);
