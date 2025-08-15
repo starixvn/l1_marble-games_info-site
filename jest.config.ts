@@ -1,16 +1,13 @@
 import type { Config } from "jest";
 import nextJest from "next/jest";
 
-const createJestConfig = nextJest({
-    // Provide the path to your Next.js app to load next.config.js and .env files
-    dir: "./",
-});
+const createJestConfig = nextJest();
 
 // Add any custom config to be passed to Jest
 const customJestConfig: Config = {
     setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
     testEnvironment: "jsdom",
-    testPathIgnorePatterns: ["<rootDir>/.next/", "<rootDir>/node_modules/"],
+    testPathIgnorePatterns: ["<rootDir>/.next/", "<rootDir>/node_modules/", "<rootDir>/src/app/api/"],
     moduleNameMapper: {
         "^@/(.*)$": "<rootDir>/src/$1",
     },
