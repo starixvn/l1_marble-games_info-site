@@ -2,12 +2,12 @@
 
 import Footer from "@/components/common/footer";
 import Header from "@/components/common/header";
-import AboutSection from "@/components/sections/about-section";
-import ContactSection from "@/components/sections/contact-section";
-import GameShowcaseSection from "@/components/sections/game-showcase-section";
-import HeroSection from "@/components/sections/hero-section";
-import ServicesSection from "@/components/sections/services-section";
-import StrengthsSection from "@/components/sections/strengths-section";
+import AboutSection from "@/components/sections/about";
+import ContactSection from "@/components/sections/contact";
+import GameShowcaseSection from "@/components/sections/game-showcase";
+import HeroSection from "@/components/sections/hero";
+import ServicesSection from "@/components/sections/services";
+import StrengthsSection from "@/components/sections/strengths";
 import {
     ABOUT_DATA,
     COPYRIGHT_TEXT,
