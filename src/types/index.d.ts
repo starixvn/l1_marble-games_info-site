@@ -129,3 +129,17 @@ export interface IconProps {
     className?: string;
     size?: "sm" | "md" | "lg";
 }
+
+declare global {
+    interface Window {
+        envConfig?: {
+            sentry?: {
+                dsn?: string;
+                environment?: string;
+                [key: string]: unknown;
+            };
+            system?: string;
+            [key: string]: unknown;
+        };
+    }
+}

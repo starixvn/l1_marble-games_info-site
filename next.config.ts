@@ -1,4 +1,7 @@
+import { withSentryConfig } from "@sentry/nextjs";
 import type { NextConfig } from "next";
+const buildVersion = new Date().getTime().toString();
+const basePath = "";
 
 const nextConfig: NextConfig = {
     eslint: {
@@ -42,6 +45,29 @@ const nextConfig: NextConfig = {
             },
         ];
     },
+
+    basePath,
+
+    // environment variables
+    env: {
+        buildVersion,
+    },
+
+    sassOptions: {
+        prependData: `$version-image: '${buildVersion}';`,
+    },
+
+    async rewrites() {
+        return [
+            {
+                source: "/health",
+                destination: "/api/health",
+            },
+        ];
+    },
 };
 
-export default nextConfig;
+export default withSentryConfig(nextConfig, {
+    silent: true,
+    sourcemaps: { deleteSourcemapsAfterUpload: true },
+});

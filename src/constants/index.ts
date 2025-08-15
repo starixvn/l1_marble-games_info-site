@@ -1,6 +1,8 @@
 import { AboutSection, GameShowcase, NavLink, ServiceCard, SocialLink } from "@/types";
 import { STRENGTHS_DATA } from "./strengths";
 
+export const buildVersion = process?.env?.buildVersion || 111;
+
 // Navigation links
 export const NAV_LINKS: NavLink[] = [
     { href: "#home", label: "Home" },

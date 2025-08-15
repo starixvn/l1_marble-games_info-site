@@ -1,7 +1,10 @@
+import { buildVersion } from "@/constants";
 import "@/styles/globals.scss";
 import "@/styles/tailwind.css";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
+import SentryInit from "./sentry-init";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,9 +38,14 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const configFileWithVersion = `./c.js?${buildVersion}`;
     return (
         <html lang="en" className="scroll-smooth">
-            <body className={inter.className}>{children}</body>
+            <body className={inter.className}>
+                <Script id="config-script" src={configFileWithVersion} strategy="beforeInteractive" />
+                <SentryInit />
+                {children}
+            </body>
         </html>
     );
 }
