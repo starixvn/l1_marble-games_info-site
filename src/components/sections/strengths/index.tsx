@@ -1,5 +1,5 @@
 import Card from "@/components/ui/card";
-import { ChatIcon, LightningIcon, StarIcon, TrendingIcon } from "@/components/ui/icons";
+import { ChatIcon, LightningIcon, StarIcon, TrendingIcon } from "@/components/ui/icons/icons";
 import React from "react";
 
 // Strength data type without icon

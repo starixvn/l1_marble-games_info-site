@@ -1,4 +1,5 @@
 import { FooterProps } from "@/types";
+import Link from "next/link";
 import React from "react";
 
 const Footer: React.FC<FooterProps> = ({ socialLinks, copyright }) => {
@@ -8,7 +9,7 @@ const Footer: React.FC<FooterProps> = ({ socialLinks, copyright }) => {
                 {/* Social Media Links */}
                 <div className={`flex justify-center space-x-6 mb-4`}>
                     {socialLinks.map((link, index) => (
-                        <a
+                        <Link
                             key={`social-${index}-${link.label.toLowerCase()}`}
                             href={link.href}
                             className={`hover:text-white transition-colors duration-300`}
@@ -16,7 +17,7 @@ const Footer: React.FC<FooterProps> = ({ socialLinks, copyright }) => {
                             rel="noopener noreferrer"
                         >
                             {link.label}
-                        </a>
+                        </Link>
                     ))}
                 </div>
 

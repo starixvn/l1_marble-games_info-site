@@ -1,4 +1,5 @@
 import { ButtonProps } from "@/types";
+import Link from "next/link";
 import React from "react";
 import styles from "./button.module.scss";
 
@@ -20,9 +21,9 @@ const Button: React.FC<ButtonProps> = ({ children, variant = "primary", size = "
 
     if (href) {
         return (
-            <a href={href} className={classes}>
+            <Link href={href} className={classes}>
                 {children}
-            </a>
+            </Link>
         );
     }
 
