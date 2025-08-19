@@ -6,8 +6,6 @@
     background-size: cover;
 }
 
-/* stylelint-enable at-rule-no-unknown, scss/at-rule-no-unknown */
-@reference "tailwindcss";
 .headingXl {
     @apply text-4xl font-extrabold leading-tight;
 }
