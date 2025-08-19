@@ -11,17 +11,13 @@
         "moduleResolution": "bundler",
         "resolveJsonModule": true,
         "isolatedModules": true,
-        "jsx": "preserve",
+        "jsx": "react-jsx",
         "incremental": true,
-        "plugins": [
-            {
-                "name": "next"
-            }
-        ],
         "paths": {
             "@/*": ["./src/*"]
-        }
+        },
+        "types": ["vite/client", "node"]
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.d.ts", ".next/types/**/*.ts", "configs/missing-configuration.js"],
+    "include": ["**/*.ts", "**/*.tsx", "**/*.d.ts", "configs/missing-configuration.js"],
     "exclude": ["node_modules"]
 }

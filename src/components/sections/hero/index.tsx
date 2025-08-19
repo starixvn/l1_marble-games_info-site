@@ -7,11 +7,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description, ctaText, 
     return (
         <section id="home" className={`${styles.heroSection} text-white text-center py-20 md:py-32`}>
             <div className="container mx-auto px-6">
-                <h1 className="heading-xl mb-4 animate-fade-in-up">{title}</h1>
-                <p className="text-body text-gray-300 max-w-3xl mx-auto mb-8 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+                <h1 className={`${styles.headingXl} mb-4 ${styles.animateFadeInUp}`}>{title}</h1>
+                <p
+                    className={`${styles.textBody} text-gray-300 max-w-3xl mx-auto mb-8 ${styles.animateFadeInUp}`}
+                    style={{ animationDelay: "0.2s" }}
+                >
                     {description}
                 </p>
-                <div className="animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+                <div className={styles.animateFadeInUp} style={{ animationDelay: "0.4s" }}>
                     <Button href={ctaHref} variant="primary" size="lg" className="font-bold rounded-full">
                         {ctaText}
                     </Button>

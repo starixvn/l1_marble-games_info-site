@@ -1,7 +1,11 @@
 import { AboutSection, GameShowcase, NavLink, ServiceCard, SocialLink } from "@/types";
 import { STRENGTHS_DATA } from "./strengths";
 
-export const buildVersion = process?.env?.buildVersion || 111;
+// Use Vite env variable if provided; fall back to Node env (for tests) then a constant
+export const buildVersion =
+    (typeof import.meta !== "undefined" && (import.meta as any).env?.VITE_BUILD_VERSION) ||
+    (typeof process !== "undefined" && (process.env as any)?.buildVersion) ||
+    111;
 
 // Navigation links
 export const NAV_LINKS: NavLink[] = [

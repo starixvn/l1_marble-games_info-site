@@ -2,17 +2,16 @@
 
 ## Project Overview
 
-This is a Next.js 15+ project using App Router with TypeScript, TailwindCSS, and modern React patterns. The project follows a clean, organized structure for building an information website.
+This is a Vite + React (TypeScript) project using TailwindCSS v4 and modular SCSS. The project follows a clean, organized structure for building an information website.
 
 ## Project Structure
 
 ```
 project-root/
 ├── public/                     # Static files (images, favicon, robots.txt, etc.)
-│   ├── images/                # Static images
-│   └── icons/                 # SVG or PNG icons
+│   ├── images/                 # Static images
+│   └── icons/                  # SVG or PNG icons
 ├── src/
-│   ├── app/                   # Next.js App Router (Next 13+)
 │   ├── components/            # Reusable UI components
 │   │   ├── common/            # Shared components (Header, Footer)
 │   │   │   ├── header/        # Header component folder
@@ -42,28 +41,28 @@ project-root/
 │   ├── hooks/                 # Custom hooks
 │   ├── types/                 # TypeScript types/interfaces
 │   ├── utils/                 # Utility functions (helpers)
-│   └── styles/                # SCSS organization and global styles
-│       ├── tailwind.css       # TailwindCSS directives
-│       ├── index.scss         # Main entry point - imports all styles
+│   └── styles/                 # SCSS organization and global styles
+│       ├── tailwind.scss      # Tailwind v4 entry (imports "tailwindcss" and shared layers)
 │       ├── globals.scss       # Global styles (CSS variables, base styles)
 │       ├── layout.scss        # Layout utilities (spacing, containers, grids)
 │       ├── typography.scss    # Typography classes (headings, text styles)
 │       ├── utilities.scss     # Utility classes (icons, responsive, animations)
 │       ├── animations.scss    # Custom animations and keyframes
-├── tailwind.config.ts         # TailwindCSS configuration
-├── postcss.config.js          # PostCSS configuration
-├── tsconfig.json              # TypeScript configuration
+├── tailwind.config.ts          # TailwindCSS configuration (v4)
+├── tsconfig.json               # TypeScript configuration
 ├── package.json
-└── next.config.js             # Next.js configuration
+├── vite.config.mts             # Vite configuration
+├── index.html                  # Vite HTML entry
+└── public/c.js                 # Runtime environment config (window.envConfig)
 ```
 
 ## Technology Stack
 
--   **Framework**: Next.js 15+ with App Router
+-   **Framework**: React 19 + Vite 7
 -   **Language**: TypeScript
--   **Styling**: TailwindCSS + SCSS (modular architecture)
+-   **Styling**: TailwindCSS v4 + SCSS (modular architecture)
 -   **State Management**: React Context + Custom Hooks
--   **Build Tool**: Vite (via Next.js)
+-   **Build Tool**: Vite
 
 ## Coding Standards
 
@@ -78,7 +77,7 @@ project-root/
 ### React Components
 
 -   Use functional components with hooks
--   Follow React 18+ best practices
+-   Follow React 19+ best practices
 -   Use proper prop typing with interfaces
 -   Implement proper error boundaries
 -   Use React.memo() for performance optimization when needed
@@ -110,9 +109,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ title, description }) 
 -   Use absolute imports with `@/` alias (configured in tsconfig.json)
 -   Group imports: React, external libraries, internal modules, types
 -   Use named exports for components and functions
--   Use default exports only for pages and layouts
+-   Use default exports for components as appropriate
 -   Import SCSS modules in components: `import styles from './component-name.module.scss'`
 -   Use CSS modules for scoped styling: `className={styles.componentClass}`
+-   Use `import type { ... } from '@/types'` when importing only TypeScript types
 
 ### Styling Guidelines
 
@@ -122,21 +122,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ title, description }) 
 -   **Global Styles**: Keep `globals.scss` minimal - only CSS variables, base styles, scrollbar, print styles
 -   **Component Styles**: Each component should import its own SCSS module
 -   **Utility Styles**: Organize common styles into logical files (layout, typography, utilities, animations)
--   **TailwindCSS**: Use utility classes as primary styling method with `@apply` for custom components
+-   **TailwindCSS v4**: Use utility classes as primary styling method; in `src/styles/tailwind.scss` import Tailwind with `@import "tailwindcss";` and register shared classes inside `@layer components`/`@layer utilities`.
 -   **CSS Variables**: Use CSS custom properties for theme values
 -   **Responsive Design**: Follow mobile-first approach with Tailwind responsive prefixes
 
 ### SCSS Organization Rules
 
-#### File Structure
+#### File Structure (Tailwind v4)
 
 ```
 src/styles/
-├── index.scss              # Main entry point - imports all styles
-├── globals.scss            # Global styles only (variables, base, scrollbar)
+├── tailwind.scss           # Import "tailwindcss" and include shared layers with @layer
+├── globals.scss            # Global styles only (variables, base, scrollbar, print)
 ├── layout.scss             # Layout utilities (spacing, containers, grids)
 ├── typography.scss         # Typography classes (headings, text styles)
-├── utilities.scss          # Utility classes (icons, responsive, animations)
+├── utilities.scss          # Helper classes and utility functions
 ├── animations.scss         # Custom animations and keyframes
 └── components/             # Component-specific styles
     ├── sections/           # Section component styles
@@ -158,14 +158,16 @@ src/styles/
 -   Use descriptive class names that match component
 -   Import SCSS module in component: `import styles from './component-name.module.scss'`
 -   Use CSS modules for scoped styling: `className={styles.componentClass}`
--   Add SCSS import to `src/styles/index.scss` for global availability
+-   Do NOT import component styles globally. Import each `*.module.scss` directly inside its component.
 
-#### Utility SCSS Rules
+#### Utility SCSS Rules (Tailwind v4)
 
--   Use `layout.scss` for spacing, containers, grid layouts
--   Use `typography.scss` for text styles, headings, gradients
--   Use `utilities.scss` for icons, responsive helpers, focus styles
--   Use `animations.scss` for keyframes, animation classes, hover effects
+-   Place shared utilities/components inside `@layer` blocks and include them from `src/styles/tailwind.scss`:
+    - `layout.scss` → `@layer components`
+    - `typography.scss` → `@layer components`
+    - `utilities.scss` → `@layer utilities`
+    - `animations.scss` → `@layer utilities`
+  This ensures Tailwind can tree-shake and order layers correctly.
 
 ### State Management
 
@@ -176,7 +178,6 @@ src/styles/
 
 ### Performance Best Practices
 
--   Use Next.js Image component for optimized images
 -   Implement proper lazy loading for components
 -   Use React.memo() and useMemo() strategically
 -   Optimize bundle size with dynamic imports
@@ -234,7 +235,7 @@ it("should handle startup error correctly", () => {
 
 ### SEO Optimization
 
--   Use Next.js built-in SEO features
+-   Use semantic HTML meta in `index.html`
 -   Implement proper meta tags
 -   Use semantic HTML structure
 -   Optimize for Core Web Vitals
@@ -256,12 +257,12 @@ it("should handle startup error correctly", () => {
 
 ### Styles Directory
 
--   `index.scss`: Main entry point that imports all styles
+-   `tailwind.scss`: Import "tailwindcss" and include shared layers with `@layer`
 -   `globals.scss`: Only truly global styles (variables, base, scrollbar, print)
--   `layout.scss`: Layout utilities and grid systems
--   `typography.scss`: Text styles and typography classes
--   `utilities.scss`: Helper classes and utility functions
--   `animations.scss`: Custom animations and keyframes
+-   `layout.scss`: Layout utilities and grid systems (wrap in `@layer components`)
+-   `typography.scss`: Text styles and typography classes (wrap in `@layer components`)
+-   `utilities.scss`: Helper classes and utility functions (wrap in `@layer utilities`)
+-   `animations.scss`: Custom animations and keyframes (wrap in `@layer utilities`)
 -   `components/`: Component-specific styles organized by component type
 
 ### Hooks Directory
@@ -291,7 +292,7 @@ it("should handle startup error correctly", () => {
 2. Create `index.tsx` (main component) and `component-name.module.scss` in component folder
 3. Import SCSS module in component: `import styles from './component-name.module.scss'`
 4. Use CSS modules for styling: `className={styles.componentClass}`
-5. Add SCSS import to `src/styles/index.scss`
+5. Shared style utilities belong in `src/styles/*.scss` and are included via `src/styles/tailwind.scss`
 6. Define types before implementing components
 7. Use TailwindCSS classes for styling
 8. Implement proper error handling
@@ -382,7 +383,7 @@ export const apiClient = {
 
 ## Build and Deployment
 
--   Use Next.js built-in optimization features
+-   Use Vite's built-in optimization features
 -   Implement proper environment variable handling
 -   Use proper build caching strategies
 -   Optimize for Vercel deployment

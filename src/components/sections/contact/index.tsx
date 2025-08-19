@@ -1,9 +1,8 @@
-"use client";
-
 import Button from "@/components/ui/button";
 import Input from "@/components/ui/input";
 import { ContactForm, ContactSectionProps } from "@/types";
 import React, { useState } from "react";
+import styles from "./contact-section.module.scss";
 
 const ContactSection: React.FC<ContactSectionProps> = ({ title, subtitle, onSubmit }) => {
     const [formData, setFormData] = useState<ContactForm>({
@@ -34,10 +33,10 @@ const ContactSection: React.FC<ContactSectionProps> = ({ title, subtitle, onSubm
     };
 
     return (
-        <section id="contact" className={`section-padding bg-gray-900`}>
+        <section id="contact" className={`${styles.sectionPadding} bg-gray-900`}>
             <div className="container mx-auto px-6">
                 <div className="text-center mb-12">
-                    <h2 className="heading-lg text-white mb-2">{title}</h2>
+                    <h2 className={`${styles.headingLg} text-white mb-2`}>{title}</h2>
                     <p className="text-gray-400 mt-2">{subtitle}</p>
                 </div>
 

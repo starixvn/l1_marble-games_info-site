@@ -1,8 +1,5 @@
-"use client";
-
 import Button from "@/components/ui/button";
 import { HeaderProps } from "@/types";
-import Link from "next/link";
 import React, { useState } from "react";
 import styles from "./header.module.scss";
 
@@ -20,9 +17,9 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
     return (
         <header className="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
             <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-                <Link href="#home" className="text-2xl font-bold text-white">
+                <a href="#home" className="text-2xl font-bold text-white">
                     SABA <span className="text-blue-500">Marble</span>
-                </Link>
+                </a>
 
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center space-x-8">
@@ -38,14 +35,14 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
                                 {link.label}
                             </Button>
                         ) : (
-                            <Link
+                            <a
                                 key={`nav-link-${index}-${link.href}`}
                                 href={link.href}
                                 className={`${styles.navLink} text-gray-300 hover:text-white`}
                                 onClick={closeMobileMenu}
                             >
                                 {link.label}
-                            </Link>
+                            </a>
                         )
                     )}
                 </div>
@@ -72,14 +69,14 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
             {/* Mobile Menu */}
             <div className={`md:hidden ${isMobileMenuOpen ? styles.mobileMenuOpen : styles.mobileMenu}`}>
                 {navLinks.map((link, index) => (
-                    <Link
+                    <a
                         key={`mobile-nav-${index}-${link.href}`}
                         href={link.href}
                         className="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors"
                         onClick={closeMobileMenu}
                     >
                         {link.label}
-                    </Link>
+                    </a>
                 ))}
             </div>
         </header>

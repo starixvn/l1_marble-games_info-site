@@ -1,0 +1,18 @@
+@reference "tailwindcss";
+
+.sectionPadding {
+    @apply py-16;
+    @media (min-width: 768px) {
+        @apply py-20;
+    }
+}
+
+.headingLg {
+    @apply text-3xl font-bold;
+}
+
+@media (min-width: 768px) {
+    .headingLg {
+        @apply text-4xl;
+    }
+}

@@ -1,5 +1,3 @@
-"use client";
-
 import Footer from "@/components/common/footer";
 import Header from "@/components/common/header";
 import AboutSection from "@/components/sections/about";
@@ -20,7 +18,7 @@ import {
     SOCIAL_LINKS,
     STRENGTHS,
 } from "@/constants";
-import { ContactForm } from "@/types";
+import type { ContactForm } from "@/types";
 
 export default function Page() {
     const handleContactSubmit = (data: ContactForm) => {

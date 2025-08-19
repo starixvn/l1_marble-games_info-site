@@ -1,10 +1,9 @@
 import { ButtonProps } from "@/types";
-import Link from "next/link";
 import React from "react";
 import styles from "./button.module.scss";
 
 const Button: React.FC<ButtonProps> = ({ children, variant = "primary", size = "md", href, onClick, className = "", type = "button" }) => {
-    const baseClasses = "inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 focus-ring";
+    const baseClasses = `inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 ${styles.focusRing}`;
 
     const variantClasses = {
         primary: styles.btnPrimary,
@@ -21,9 +20,9 @@ const Button: React.FC<ButtonProps> = ({ children, variant = "primary", size = "
 
     if (href) {
         return (
-            <Link href={href} className={classes}>
+            <a href={href} className={classes}>
                 {children}
-            </Link>
+            </a>
         );
     }
 

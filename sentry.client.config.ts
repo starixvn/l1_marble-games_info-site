@@ -2,7 +2,7 @@
 // The config you add here will be used whenever a page is visited.
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 
-import * as Sentry from "@sentry/nextjs";
+import * as Sentry from "@sentry/react";
 
 if (typeof window !== "undefined" && window.envConfig) {
     Sentry.init({ ...window.envConfig.sentry, ignoreErrors: ["Network Error"] });
