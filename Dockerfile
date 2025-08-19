@@ -1,4 +1,4 @@
-FROM hub.lumigame.com/base/node:20.9.0-alpine-24h1.1 AS base
+FROM hub.lumigame.com/base/node:22-alpine-25h2 AS base
 FROM base AS deps
 WORKDIR /app
 

@@ -42,12 +42,8 @@ project-root/
 │   ├── types/                 # TypeScript types/interfaces
 │   ├── utils/                 # Utility functions (helpers)
 │   └── styles/                 # SCSS organization and global styles
-│       ├── tailwind.scss      # Tailwind v4 entry (imports "tailwindcss" and shared layers)
-│       ├── globals.scss       # Global styles (CSS variables, base styles)
-│       ├── layout.scss        # Layout utilities (spacing, containers, grids)
-│       ├── typography.scss    # Typography classes (headings, text styles)
-│       ├── utilities.scss     # Utility classes (icons, responsive, animations)
-│       ├── animations.scss    # Custom animations and keyframes
+│       ├── tailwind.scss       # Tailwind v4 entry (imports "tailwindcss")
+│       └── globals.scss       # Global styles (CSS variables, base styles)
 ├── tailwind.config.ts          # TailwindCSS configuration (v4)
 ├── tsconfig.json               # TypeScript configuration
 ├── package.json
@@ -122,7 +118,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ title, description }) 
 -   **Global Styles**: Keep `globals.scss` minimal - only CSS variables, base styles, scrollbar, print styles
 -   **Component Styles**: Each component should import its own SCSS module
 -   **Utility Styles**: Organize common styles into logical files (layout, typography, utilities, animations)
--   **TailwindCSS v4**: Use utility classes as primary styling method; in `src/styles/tailwind.scss` import Tailwind with `@import "tailwindcss";` and register shared classes inside `@layer components`/`@layer utilities`.
+-   **TailwindCSS v4**: Use utility classes as primary styling method; in `src/styles/tailwind.css` import Tailwind with `@import "tailwindcss";`. If you add shared classes later, place them inside `@layer` blocks in separate SCSS files and import them where appropriate.
 -   **CSS Variables**: Use CSS custom properties for theme values
 -   **Responsive Design**: Follow mobile-first approach with Tailwind responsive prefixes
 
@@ -132,23 +128,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ title, description }) 
 
 ```
 src/styles/
-├── tailwind.scss           # Import "tailwindcss" and include shared layers with @layer
-├── globals.scss            # Global styles only (variables, base, scrollbar, print)
-├── layout.scss             # Layout utilities (spacing, containers, grids)
-├── typography.scss         # Typography classes (headings, text styles)
-├── utilities.scss          # Helper classes and utility functions
-├── animations.scss         # Custom animations and keyframes
-└── components/             # Component-specific styles
-    ├── sections/           # Section component styles
-    │   ├── hero-section.module.scss
-    │   └── contact-section.module.scss
-    ├── ui/                 # UI component styles
-    │   ├── button.module.scss
-    │   ├── card.module.scss
-    │   └── input.module.scss
-    └── common/             # Common component styles
-        ├── header.module.scss
-        └── footer.module.scss
+├── tailwind.css           # Import "tailwindcss"
+└── globals.scss           # Global styles only (variables, base, scrollbar, print)
 ```
 
 #### Component SCSS Rules
@@ -162,12 +143,8 @@ src/styles/
 
 #### Utility SCSS Rules (Tailwind v4)
 
--   Place shared utilities/components inside `@layer` blocks and include them from `src/styles/tailwind.scss`:
-    - `layout.scss` → `@layer components`
-    - `typography.scss` → `@layer components`
-    - `utilities.scss` → `@layer utilities`
-    - `animations.scss` → `@layer utilities`
-  This ensures Tailwind can tree-shake and order layers correctly.
+-   Current setup includes only `tailwind.css` and `globals.scss`.
+-   If you introduce shared utilities/components later, place them inside `@layer` blocks in SCSS files and import them where appropriate so Tailwind can tree-shake and order layers correctly.
 
 ### State Management
 
@@ -257,13 +234,8 @@ it("should handle startup error correctly", () => {
 
 ### Styles Directory
 
--   `tailwind.scss`: Import "tailwindcss" and include shared layers with `@layer`
+-   `tailwind.css`: Import "tailwindcss"
 -   `globals.scss`: Only truly global styles (variables, base, scrollbar, print)
--   `layout.scss`: Layout utilities and grid systems (wrap in `@layer components`)
--   `typography.scss`: Text styles and typography classes (wrap in `@layer components`)
--   `utilities.scss`: Helper classes and utility functions (wrap in `@layer utilities`)
--   `animations.scss`: Custom animations and keyframes (wrap in `@layer utilities`)
--   `components/`: Component-specific styles organized by component type
 
 ### Hooks Directory
 
@@ -292,7 +264,7 @@ it("should handle startup error correctly", () => {
 2. Create `index.tsx` (main component) and `component-name.module.scss` in component folder
 3. Import SCSS module in component: `import styles from './component-name.module.scss'`
 4. Use CSS modules for styling: `className={styles.componentClass}`
-5. Shared style utilities belong in `src/styles/*.scss` and are included via `src/styles/tailwind.scss`
+5. Shared style utilities can be added later in `src/styles/*.scss`. The Tailwind entry is `src/styles/tailwind.css`.
 6. Define types before implementing components
 7. Use TailwindCSS classes for styling
 8. Implement proper error handling
