@@ -28,7 +28,3 @@ COPY configs/missing-configuration.js /app/dist/c.js
 FROM hub.lumigame.com/base/nginx:brotli-1.20.2-zlib AS publish
 COPY ./src/.nginx/game.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /app/dist /usr/share/nginx/html/
-
-EXPOSE 5000
-
-ENTRYPOINT [ "nginx", "-g", "daemon off;" ]

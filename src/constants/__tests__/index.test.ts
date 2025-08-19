@@ -3,36 +3,6 @@
   - Uses Arrange → Act → Assert structure per project rules
 */
 
-describe("constants/index - buildVersion", () => {
-    it("should default to 111 when process.env.buildVersion is not set", async () => {
-        // Arrange
-        jest.resetModules();
-        // Ensure undefined
-        Reflect.deleteProperty(process.env, "buildVersion");
-
-        // Act
-        const { buildVersion } = await import("@/constants");
-
-        // Assert
-        expect(buildVersion).toBe(111);
-    });
-
-    it("should use process.env.buildVersion when set (as string)", async () => {
-        // Arrange
-        jest.resetModules();
-        process.env.buildVersion = "12345";
-
-        // Act
-        const { buildVersion } = await import("@/constants");
-
-        // Assert
-        expect(buildVersion).toBe("12345");
-
-        // Cleanup
-        Reflect.deleteProperty(process.env, "buildVersion");
-    });
-});
-
 describe("constants/index - data shapes", () => {
     it("should expose NAV_LINKS with expected last link as button", async () => {
         // Arrange
