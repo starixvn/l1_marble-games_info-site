@@ -1,7 +1,7 @@
 import type { Config } from "jest";
 
 const config: Config = {
-    setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
+    setupFilesAfterEnv: ["<rootDir>/src/tests/setup/jest.setup.js"],
     testEnvironment: "jsdom",
     testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/src/app/api/"],
     moduleNameMapper: {

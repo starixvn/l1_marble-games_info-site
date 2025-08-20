@@ -12,6 +12,14 @@ project-root/
 │   ├── images/                 # Static images
 │   └── icons/                  # SVG or PNG icons
 ├── src/
+│   ├── pages/                 # Application pages (for routing)
+│   │   └── home/
+│   │       └── index.tsx
+│   ├── layouts/               # App layouts (wrapping header/footer, etc.)
+│   │   └── main-layout/
+│   │       └── index.tsx
+│   ├── routes/                # Centralized route definitions (lazy-loaded)
+│   │   └── index.tsx
 │   ├── components/            # Reusable UI components
 │   │   ├── common/            # Shared components (Header, Footer)
 │   │   │   ├── header/        # Header component folder
@@ -21,28 +29,16 @@ project-root/
 │   │   │       ├── index.tsx  # Main component file
 │   │   │       └── footer.module.scss # Component styles
 │   │   ├── sections/          # Page sections (Hero, About, Services, etc.)
-│   │   │   ├── hero-section/  # Hero section folder
-│   │   │   │   ├── index.tsx  # Main component file
-│   │   │   │   └── hero-section.module.scss # Component styles
-│   │   │   └── contact-section/ # Contact section folder
-│   │   │       ├── index.tsx  # Main component file
-│   │   │       └── contact-section.module.scss # Component styles
 │   │   └── ui/                # Atomic UI components (Button, Input, Card, etc.)
-│   │       ├── button/        # Button component folder
-│   │       │   ├── index.tsx  # Main component file
-│   │       │   └── button.module.scss # Component styles
-│   │       ├── card/          # Card component folder
-│   │       │   ├── index.tsx  # Main component file
-│   │   │   └── card.module.scss # Component styles
-│   │       └── input/         # Input component folder
-│   │           ├── index.tsx  # Main component file
-│   │           └── input.module.scss # Component styles
 │   ├── contexts/              # React Context (global state)
 │   ├── hooks/                 # Custom hooks
 │   ├── types/                 # TypeScript types/interfaces
 │   ├── utils/                 # Utility functions (helpers)
-│   └── styles/                 # SCSS organization and global styles
-│       ├── tailwind.scss       # Tailwind v4 entry (imports "tailwindcss")
+│   ├── tests/                 # Testing setup and utilities
+│   │   └── setup/
+│   │       └── jest.setup.js  # Jest environment setup (referenced by jest.config.ts)
+│   └── styles/                # SCSS organization and global styles
+│       ├── tailwind.scss      # Tailwind v4 entry (imports "tailwindcss")
 │       └── globals.scss       # Global styles (CSS variables, base styles)
 ├── tailwind.config.ts          # TailwindCSS configuration (v4)
 ├── tsconfig.json               # TypeScript configuration
@@ -102,7 +98,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ title, description }) 
 
 ### Import/Export Patterns
 
--   Use absolute imports with `@/` alias (configured in tsconfig.json)
+-   Use absolute imports with `@/` alias and page/layout aliases (configured in tsconfig.json)
+-   Aliases: `@/*`, `@pages/*`, `@layouts/*`, `@routes/*`
 -   Group imports: React, external libraries, internal modules, types
 -   Use named exports for components and functions
 -   Use default exports for components as appropriate
@@ -118,7 +115,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ title, description }) 
 -   **Global Styles**: Keep `globals.scss` minimal - only CSS variables, base styles, scrollbar, print styles
 -   **Component Styles**: Each component should import its own SCSS module
 -   **Utility Styles**: Organize common styles into logical files (layout, typography, utilities, animations)
--   **TailwindCSS v4**: Use utility classes as primary styling method; in `src/styles/tailwind.css` import Tailwind with `@import "tailwindcss";`. If you add shared classes later, place them inside `@layer` blocks in separate SCSS files and import them where appropriate.
+-   **TailwindCSS v4**: Use utility classes as primary styling method; in `src/styles/tailwind.scss` import Tailwind with `@import "tailwindcss";`. If you add shared classes later, place them inside `@layer` blocks in separate SCSS files and import them where appropriate.
 -   **CSS Variables**: Use CSS custom properties for theme values
 -   **Responsive Design**: Follow mobile-first approach with Tailwind responsive prefixes
 
@@ -128,7 +125,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ title, description }) 
 
 ```
 src/styles/
-├── tailwind.css           # Import "tailwindcss"
+├── tailwind.scss          # Import "tailwindcss"
 └── globals.scss           # Global styles only (variables, base, scrollbar, print)
 ```
 
@@ -175,6 +172,16 @@ src/styles/
 -   Use descriptive component and function names
 -   Implement proper prop validation
 -   Keep components pure and predictable
+
+#### Test Setup Location
+
+-   The Jest environment setup file is located at `src/tests/setup/jest.setup.js`.
+-   It is referenced in `jest.config.ts` via `setupFilesAfterEnv`:
+
+```ts
+// jest.config.ts
+setupFilesAfterEnv: ["<rootDir>/src/tests/setup/jest.setup.js"];
+```
 
 #### Test Structure (Arrange–Act–Assert)
 
@@ -264,13 +271,14 @@ it("should handle startup error correctly", () => {
 2. Create `index.tsx` (main component) and `component-name.module.scss` in component folder
 3. Import SCSS module in component: `import styles from './component-name.module.scss'`
 4. Use CSS modules for styling: `className={styles.componentClass}`
-5. Shared style utilities can be added later in `src/styles/*.scss`. The Tailwind entry is `src/styles/tailwind.css`.
+5. Shared style utilities can be added later in `src/styles/*.scss`. The Tailwind entry is `src/styles/tailwind.scss`.
 6. Define types before implementing components
 7. Use TailwindCSS classes for styling
 8. Implement proper error handling
 9. Test components in different screen sizes
 10. Ensure accessibility compliance
 11. Optimize for performance
+12. For new pages, create under `src/pages/<page>/index.tsx` and add a route in `src/routes/index.tsx` (use React Router lazy-loading)
 
 ## Common Patterns
 

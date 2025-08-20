@@ -23,3 +23,12 @@ Object.defineProperty(globalThis, "matchMedia", {
         dispatchEvent: jest.fn(),
     })),
 });
+
+// Polyfill TextEncoder/TextDecoder for react-router tests in JSDOM
+const { TextEncoder, TextDecoder } = require("util");
+if (!globalThis.TextEncoder) {
+    globalThis.TextEncoder = TextEncoder;
+}
+if (!globalThis.TextDecoder) {
+    globalThis.TextDecoder = TextDecoder;
+}

@@ -14,7 +14,10 @@
         "jsx": "react-jsx",
         "incremental": true,
         "paths": {
-            "@/*": ["./src/*"]
+            "@/*": ["./src/*"],
+            "@pages/*": ["./src/pages/*"],
+            "@layouts/*": ["./src/layouts/*"],
+            "@routes/*": ["./src/routes/*"]
         },
         "types": ["vite/client", "node"]
     },

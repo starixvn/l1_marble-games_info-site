@@ -16,7 +16,7 @@ FROM base AS builder
 WORKDIR /app
 ENV SASS_SILENCE_DEPRECATIONS=legacy-js-api
 COPY --from=deps /app/node_modules ./node_modules
-COPY package.json yarn.lock tsconfig.json vite.config.mts index.html tailwind.config.ts sentry.client.config.ts ./
+COPY package.json yarn.lock tsconfig.json vite.config.mts index.html tailwind.config.ts postcss.config.cjs sentry.client.config.ts ./
 COPY configs ./configs
 COPY public ./public
 COPY src ./src
