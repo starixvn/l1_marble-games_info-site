@@ -1,178 +1,131 @@
-# Marble Project - Info Site
+# Info Site – Vite + React + TypeScript
 
-A modern, fast, and SEO-optimized information site built with Next.js, TypeScript, Tailwind CSS, and SASS.
+A fast, modern information site built with Vite, React 19, TypeScript, TailwindCSS v4, and modular SCSS.
 
 ## 🚀 Features
 
-- **Next.js 15** - Latest version with App Router
-- **TypeScript** - Full type safety and better development experience
-- **Tailwind CSS** - Utility-first CSS framework
-- **SASS** - Advanced CSS with variables, mixins, and nesting
-- **SEO Optimized** - Meta tags, Open Graph, Twitter Cards, sitemap
-- **Performance** - Image optimization, compression, security headers
-- **Responsive Design** - Mobile-first approach
-- **Accessibility** - WCAG compliant components
+-   React 19 + Vite 7 (instant dev, optimized builds)
+-   TypeScript (strict) with path aliases (`@/*`, `@pages/*`, `@layouts/*`, `@routes/*`)
+-   TailwindCSS v4 + SCSS Modules (component-scoped styles)
+-   Clean structure with pages, layouts, sections, and UI components
+-   Jest + React Testing Library setup with JSDOM
+-   SEO files (`public/robots.txt`, `public/sitemap.xml`) and meta in `index.html`
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Next.js 15
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS + SASS
-- **Package Manager**: npm
-- **Linting**: ESLint
-- **SEO**: next-seo
+-   Framework: React 19 + Vite 7
+-   Language: TypeScript
+-   Styling: TailwindCSS v4 + SCSS Modules
+-   Testing: Jest 30 + RTL + jest-dom
+-   Linting: ESLint 9
 
 ## 📁 Project Structure
 
 ```
 info-site/
+├── public/                 # Static files (icons, robots.txt, sitemap, env config)
+│   └── c.js                # window.envConfig at runtime (optional)
 ├── src/
-│   └── app/
-│       ├── globals.scss      # Main SASS file with Tailwind imports
-│       ├── layout.tsx        # Root layout with SEO metadata
-│       └── page.tsx          # Homepage component
-├── public/
-│   ├── robots.txt            # SEO robots file
-│   ├── sitemap.xml          # SEO sitemap
-│   └── manifest.json        # PWA manifest
-├── next.config.ts           # Next.js configuration
-├── tailwind.config.ts       # Tailwind CSS configuration
-├── tsconfig.json            # TypeScript configuration
-└── package.json             # Dependencies and scripts
+│   ├── pages/
+│   │   └── home/           # Home page
+│   ├── layouts/
+│   │   └── main-layout/    # App shell (Header/Footer)
+│   ├── routes/             # Central routes (lazy-loaded)
+│   ├── components/
+│   │   ├── common/         # Header/Footer
+│   │   ├── sections/       # Hero, Services, etc.
+│   │   └── ui/             # Button, Input, Card, ...
+│   ├── styles/
+│   │   ├── tailwind.scss   # Tailwind v4 entry
+│   │   └── globals.scss    # Global CSS only
+│   ├── tests/
+│   │   └── setup/
+│   │       └── jest.setup.js  # Jest env setup (JSDOM, polyfills)
+│   ├── types/              # Global and feature types
+│   ├── utils/              # Utilities and test-utils
+│   ├── App.tsx             # App routes with BrowserRouter
+│   └── main.tsx            # Vite entry (mounts React root)
+├── index.html              # Vite HTML entry (SEO/meta)
+├── tailwind.config.ts      # Tailwind v4 config
+├── jest.config.ts          # Jest config (maps setup file and aliases)
+├── tsconfig.json           # TS config (paths, strict)
+└── package.json
 ```
 
-## 🚀 Getting Started
+## ⚙️ Getting Started
 
-### Prerequisites
+Requirements:
 
-- Node.js 18+ 
-- npm or yarn
+-   Node.js ≥ 20.9.0
+-   Yarn (recommended)
 
-### Installation
+Install and run:
 
-1. Clone the repository:
 ```bash
-git clone <your-repo-url>
-cd info-site
+yarn install
+yarn dev
 ```
 
-2. Install dependencies:
+Open http://localhost:5173 (Vite default) in your browser.
+
+## 🧪 Testing
+
+-   Setup file: `src/tests/setup/jest.setup.js` (referenced in `jest.config.ts` via `setupFilesAfterEnv`)
+-   Run tests:
+
 ```bash
-npm install
+yarn test             # run once
+yarn test-watch       # watch mode
+yarn test-coverage    # with coverage
+yarn test-ci          # CI-friendly
 ```
 
-3. Run the development server:
+Tests follow Arrange → Act → Assert. Use `@/utils/test-utils` for rendering.
+
+## 🧭 Path Aliases
+
+Configured in `tsconfig.json`:
+
+```json
+{
+    "paths": {
+        "@/*": ["./src/*"],
+        "@pages/*": ["./src/pages/*"],
+        "@layouts/*": ["./src/layouts/*"],
+        "@routes/*": ["./src/routes/*"]
+    }
+}
+```
+
+## 🧰 Scripts
+
 ```bash
-npm run dev
+yarn dev             # start Vite dev server
+yarn build           # build for production
+yarn start           # preview build locally
+yarn lint            # run ESLint
+yarn test            # run tests
+yarn test-watch      # run tests in watch mode
+yarn test-coverage   # run tests with coverage
+yarn test-ci         # run tests in CI
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+## 🌐 Runtime Config & Sentry
 
-## 📝 Available Scripts
+-   Optional runtime env: define `window.envConfig` in `public/c.js`
+-   Sentry is initialized in `sentry.client.config.ts` when `window.envConfig.sentry` exists
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-- `npm run type-check` - Run TypeScript type checking
+## 🧩 Styling Guidelines
 
-## 🎨 Customization
+-   Use Tailwind utility classes primarily
+-   Use SCSS Modules per-component (`component-name.module.scss`)
+-   Keep `globals.scss` minimal (variables, base, scrollbar, print)
 
-### SASS Variables
+## 🔍 SEO
 
-Edit `src/app/globals.scss` to customize:
-- Color variables
-- Typography
-- Spacing
-- Breakpoints
-- Component styles
-
-### Tailwind Configuration
-
-Modify `tailwind.config.ts` to:
-- Add custom colors
-- Extend spacing
-- Add custom animations
-- Configure plugins
-
-### SEO Configuration
-
-Update `src/app/layout.tsx` to customize:
-- Page titles and descriptions
-- Open Graph tags
-- Twitter Cards
-- Meta keywords
-
-## 🔧 Configuration Files
-
-### next.config.ts
-- Image optimization settings
-- Security headers
-- Performance optimizations
-- Experimental features
-
-### tailwind.config.ts
-- Content paths
-- Theme customization
-- Plugin configuration
-
-### tsconfig.json
-- TypeScript compiler options
-- Path mapping
-- Strict mode settings
-
-## 📱 Responsive Design
-
-The site is built with a mobile-first approach using Tailwind CSS responsive utilities:
-- `sm:` - Small devices (640px+)
-- `md:` - Medium devices (768px+)
-- `lg:` - Large devices (1024px+)
-- `xl:` - Extra large devices (1280px+)
-
-## 🚀 Performance Features
-
-- **Image Optimization**: WebP and AVIF formats
-- **Compression**: Built-in gzip compression
-- **Security Headers**: XSS protection, content type validation
-- **Font Optimization**: Next.js font optimization
-- **Code Splitting**: Automatic route-based code splitting
-
-## 🔍 SEO Features
-
-- **Meta Tags**: Comprehensive meta information
-- **Open Graph**: Social media sharing optimization
-- **Twitter Cards**: Twitter sharing optimization
-- **Sitemap**: XML sitemap for search engines
-- **Robots.txt**: Search engine crawling instructions
-- **Structured Data**: Ready for schema markup
-
-## 🎯 Best Practices
-
-- **Type Safety**: Full TypeScript coverage
-- **Component Design**: Reusable and maintainable components
-- **Performance**: Optimized images and code splitting
-- **Accessibility**: WCAG compliant markup
-- **Security**: Security headers and best practices
-
-## 📚 Learning Resources
-
-- [Next.js Documentation](https://nextjs.org/docs)
-- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [SASS Documentation](https://sass-lang.com/documentation)
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+-   Set meta tags in `index.html`
+-   `public/robots.txt` and `public/sitemap.xml` included
 
 ## 📄 License
 
-This project is licensed under the MIT License.
-
-## 🆘 Support
-
-If you have any questions or need help, please open an issue in the repository.
+MIT
