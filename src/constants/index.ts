@@ -44,22 +44,22 @@ export const SERVICES: ServiceCard[] = [
 // Game showcase data
 export const GAMES: GameShowcase[] = [
     {
-        image: "https://placehold.co/600x800/1d232a/ffffff?text=Original+Theme",
+        image: "/images/game-showcase/orginal.png",
         title: "Original Theme",
         description: "The original game design, with a colorful cartoon stadium and playful match visuals.",
         alt: "SABA Marble Original Theme",
     },
     {
-        image: "https://placehold.co/600x800/1d232a/ffffff?text=Galaxy+Theme",
+        image: "/images/game-showcase/galaxy.png",
         title: "Galaxy Theme",
         description: "A futuristic, cosmic design for a modern gaming experience.",
         alt: "SABA Marble Galaxy Theme",
     },
     {
-        image: "https://placehold.co/600x800/1d232a/ffffff?text=EPL+Theme",
-        title: "EPL Theme",
-        description: "Themed after the English Premier League for true football fans.",
-        alt: "SABA Marble EPL Theme",
+        image: "/images/game-showcase/premier_league.png",
+        title: "Premier League Theme",
+        description: "Inspired by the English Premier League, designed for true football fans.",
+        alt: "SABA Marble Premier League Theme",
     },
 ];
 

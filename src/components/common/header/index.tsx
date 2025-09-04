@@ -16,13 +16,13 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
 
     return (
         <header className="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
-            <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-                <a href="#home" className="text-2xl font-bold text-white">
-                    SABA <span className="text-blue-500">Marble</span>
+            <nav className="container mx-auto px-6 py-1 flex justify-between items-center">
+                <a href="#home" className="inline-flex items-center" aria-label="SABA Marbles home">
+                    <img src="/images/logo.png" alt="SABA Marbles" className="h-auto w-auto" />
                 </a>
 
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex items-center space-x-8">
+                <div className="hidden md:flex items-center space-x-8 text-base">
                     {navLinks.map((link, index) =>
                         link.isButton ? (
                             <Button
@@ -38,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
                             <a
                                 key={`nav-link-${index}-${link.href}`}
                                 href={link.href}
-                                className={`${styles.navLink} text-gray-300 hover:text-white`}
+                                className={`${styles.navLink} text-brand hover:text-white text-base`}
                                 onClick={closeMobileMenu}
                             >
                                 {link.label}
@@ -72,7 +72,7 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
                     <a
                         key={`mobile-nav-${index}-${link.href}`}
                         href={link.href}
-                        className="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors"
+                        className="block py-2 px-4 text-base text-brand hover:bg-gray-700 hover:text-white transition-colors"
                         onClick={closeMobileMenu}
                     >
                         {link.label}

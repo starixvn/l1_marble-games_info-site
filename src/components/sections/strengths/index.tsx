@@ -7,6 +7,8 @@ import styles from "./strengths-section.module.scss";
 interface StrengthData {
     title: string;
     description: string;
+    image?: string;
+    alt?: string;
 }
 
 interface StrengthsSectionProps {
@@ -28,7 +30,7 @@ const StrengthsSection: React.FC<StrengthsSectionProps> = ({ title, subtitle, st
         <section id="strengths" className={`${styles.sectionPadding} bg-gray-900`}>
             <div className="container mx-auto px-6">
                 <div className="text-center mb-12">
-                    <h2 className={`${styles.headingLg} text-white mb-2`}>{title}</h2>
+                    <h2 className={`${styles.headingLg} text-gradient-brand-red mb-2`}>{title}</h2>
                     <p className="text-gray-400 mt-2">{subtitle}</p>
                 </div>
 
@@ -38,7 +40,15 @@ const StrengthsSection: React.FC<StrengthsSectionProps> = ({ title, subtitle, st
                             key={`strength-${index}-${strength.title.toLowerCase().replace(/\s+/g, "-")}`}
                             className="p-8 text-center hover"
                         >
-                            <div className={styles.iconContainer}>{STRENGTH_ICONS[index] || <StarIcon key="strength-default-icon" />}</div>
+                            {strength.image ? (
+                                <div className={styles.imageContainer}>
+                                    <img src={strength.image} alt={strength.alt || strength.title} />
+                                </div>
+                            ) : (
+                                <div className={styles.iconContainer}>
+                                    {STRENGTH_ICONS[index] || <StarIcon key="strength-default-icon" />}
+                                </div>
+                            )}
                             <h3 className={`${styles.headingMd} text-white mb-2`}>{strength.title}</h3>
                             <p className="text-gray-400">{strength.description}</p>
                         </Card>

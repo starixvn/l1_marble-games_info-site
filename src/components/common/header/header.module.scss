@@ -10,7 +10,7 @@
         bottom: -4px;
         left: 50%;
         transform: translateX(-50%);
-        background-color: #3b82f6;
+        background-color: var(--brand-bg);
         transition: width 0.3s;
     }
 

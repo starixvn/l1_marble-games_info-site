@@ -1,13 +1,11 @@
 @reference "tailwindcss";
 
 .heroSection {
-    background: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 1)),
-        url("https://placehold.co/1920x1080/1a202c/3a475a?text=Dynamic+Soccer+Field") no-repeat center center;
-    background-size: cover;
+    @apply bg-gray-900;
 }
 
 .headingXl {
-    @apply text-4xl font-extrabold leading-tight;
+    @apply text-4xl font-extrabold leading-tight text-red-500;
 }
 
 .textBody {
@@ -27,6 +25,14 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.imageWrapper {
+    @apply rounded-2xl overflow-hidden;
+}
+
+.image {
+    @apply w-full h-auto block;
 }
 
 @media (min-width: 768px) {

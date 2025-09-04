@@ -7,18 +7,27 @@
     }
 }
 
+/* 48px => 3rem on all screens per mockup */
 .headingLg {
-    @apply text-3xl font-bold;
+    font-size: 3rem;
+    @apply font-bold;
 }
 
-@media (min-width: 768px) {
-    .headingLg {
-        @apply text-4xl;
-    }
-}
-
+/* 28px => 1.75rem for card titles */
 .headingMd {
-    @apply text-2xl font-bold;
+    font-size: 1.75rem;
+    @apply font-bold;
+}
+
+/* Utility classes for paragraph sizes in this section */
+/* 14px => 0.875rem for small descriptions */
+.textSm {
+    font-size: 0.875rem;
+}
+
+/* 18px => 1.125rem for general body text in the section */
+.textBase {
+    font-size: 1.125rem;
 }
 
 .gridShowcase {

@@ -5,7 +5,10 @@ const config: Config = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Inter", "sans-serif"],
+                sans: ["Roboto", "Inter", "sans-serif"],
+            },
+            spacing: {
+                "1": "0.25rem",
             },
             colors: {
                 gray: {

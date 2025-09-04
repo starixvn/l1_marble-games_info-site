@@ -1,1 +1,29 @@
 @use "tailwindcss";
+@layer utilities {
+    .bg-brand {
+        background-color: var(--brand-bg);
+    }
+    .text-brand {
+        color: var(--brand-text);
+    }
+    .btn-brand {
+        @apply inline-flex items-center justify-center font-semibold rounded-md px-4 py-2 transition-colors duration-200;
+        background-color: var(--brand-bg);
+        color: var(--brand-text);
+    }
+
+    .text-brand-red {
+        color: var(--brand-red-end);
+    }
+
+    .text-brand-red-light {
+        color: var(--brand-red-start);
+    }
+
+    .text-gradient-brand-red {
+        background-image: linear-gradient(90deg, var(--brand-red-start) 0%, var(--brand-red-end) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+}

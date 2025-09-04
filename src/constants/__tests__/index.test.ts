@@ -40,7 +40,7 @@ describe("constants/index - data shapes", () => {
 
         // Assert
         expect(GAMES).toHaveLength(3);
-        expect(titles).toEqual(expect.arrayContaining(["Original Theme", "Galaxy Theme", "EPL Theme"]));
+        expect(titles).toEqual(expect.arrayContaining(["Original Theme", "Galaxy Theme", "Premier League Theme"]));
     });
 
     it("should expose DEMO_LINKS with expected keys", async () => {

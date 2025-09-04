@@ -9,8 +9,8 @@ const GameShowcaseSection: React.FC<GameShowcaseProps> = ({ title, subtitle, gam
         <section id="showcase" className={`${styles.sectionPadding} bg-gray-900`}>
             <div className="container mx-auto px-6">
                 <div className="text-center mb-12">
-                    <h2 className={`${styles.headingLg} text-white mb-2`}>{title}</h2>
-                    <p className="text-gray-400 mt-2">{subtitle}</p>
+                    <h2 className={`${styles.headingLg} text-gradient-brand-red mb-2`}>{title}</h2>
+                    <p className={`text-gray-400 mt-2 ${styles.textBase}`}>{subtitle}</p>
                 </div>
 
                 <div className={styles.gridShowcase}>
@@ -28,15 +28,15 @@ const GameShowcaseSection: React.FC<GameShowcaseProps> = ({ title, subtitle, gam
                             />
                             <div className="p-6">
                                 <h3 className={`${styles.headingMd} text-white mb-2`}>{game.title}</h3>
-                                <p className="text-gray-400 mt-2">{game.description}</p>
+                                <p className={`text-gray-400 mt-2 ${styles.textSm}`}>{game.description}</p>
                             </div>
                         </Card>
                     ))}
 
                     {/* Demo Links Section */}
                     <div className="md:col-span-3 text-center mt-12">
-                        <h3 className={`${styles.headingMd} text-white mb-4`}>Try Our Demo Games Now</h3>
-                        <p className="text-gray-400 mb-4">Play for free on:</p>
+                        <h3 className={`${styles.headingLg} text-gradient-brand-red mb-4`}>Try Our Demo Games Now</h3>
+                        <p className={`text-gray-400 mb-4 ${styles.textBase}`}>Play for free on:</p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <Button href={demoLinks.sabaSports} variant="primary" size="md" className="rounded-full">
                                 SABA Sports Demo

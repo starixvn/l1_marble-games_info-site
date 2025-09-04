@@ -10,13 +10,17 @@
     --text-primary: #e5e7eb;
     --text-secondary: #9ca3af;
     --text-muted: #6b7280;
+    --brand-bg: #b90009;
+    --brand-text: #ececec;
+    --brand-red-start: #ff3f3f; // Figma stop 0%
+    --brand-red-end: #830000; // Figma stop 100%
 }
 
 // Base styles
 body {
-    font-family: "Inter", sans-serif;
+    font-family: "Roboto", "Inter", sans-serif;
     background-color: var(--background-dark);
-    color: var(--text-primary);
+    color: var(--brand-text);
 }
 
 // Scrollbar styles
@@ -42,4 +46,22 @@ body {
     .no-print {
         display: none !important;
     }
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("/fonts/roboto/roboto-regular.woff2") format("woff2"), url("/fonts/roboto/roboto-regular.woff") format("woff"),
+        url("/fonts/roboto/roboto-regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("/fonts/roboto/roboto-bold.woff2") format("woff2"), url("/fonts/roboto/roboto-bold.woff") format("woff"),
+        url("/fonts/roboto/roboto-bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
