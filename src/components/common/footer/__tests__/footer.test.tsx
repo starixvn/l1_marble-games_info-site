@@ -12,14 +12,9 @@ describe("Footer Component", () => {
         // Arrange
 
         // Act
-        render(<Footer socialLinks={mockSocialLinks} copyright="© 2025 SABA Marble" />);
+        render(<Footer copyright="© 2025 SABA Marble" />);
 
         // Assert
-        mockSocialLinks.forEach(({ label, href }) => {
-            const link = screen.getByRole("link", { name: new RegExp(label, "i") });
-            expect(link).toBeInTheDocument();
-            expect(link).toHaveAttribute("href", href);
-        });
 
         expect(screen.getByText(/© 2025 SABA Marble/i)).toBeInTheDocument();
     });

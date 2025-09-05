@@ -95,7 +95,6 @@ export interface ContactSectionProps {
 }
 
 export interface FooterProps {
-    socialLinks: SocialLink[];
     copyright: string;
 }
 

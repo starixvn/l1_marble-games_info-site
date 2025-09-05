@@ -1,6 +1,6 @@
 import Footer from "@/components/common/footer";
 import Header from "@/components/common/header";
-import { COPYRIGHT_TEXT, NAV_LINKS, SOCIAL_LINKS } from "@/constants";
+import { COPYRIGHT_TEXT, NAV_LINKS } from "@/constants";
 import React from "react";
 
 interface MainLayoutProps {
@@ -12,7 +12,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
         <div className="min-h-screen bg-gray-900">
             <Header navLinks={NAV_LINKS} />
             <main>{children}</main>
-            <Footer socialLinks={SOCIAL_LINKS} copyright={COPYRIGHT_TEXT} />
+            <Footer copyright={COPYRIGHT_TEXT} />
         </div>
     );
 };

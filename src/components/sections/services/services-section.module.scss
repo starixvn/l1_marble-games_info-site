@@ -8,17 +8,19 @@
 }
 
 .headingLg {
-    @apply text-3xl font-bold;
+    font-size: 48px;
+    line-height: 1.15;
+    @apply font-bold;
 }
 
-@media (min-width: 768px) {
-    .headingLg {
-        @apply text-4xl;
-    }
+.subtitle {
+    font-size: 18px;
 }
 
 .headingMd {
-    @apply text-2xl font-bold;
+    font-size: 28px;
+    line-height: 1.25;
+    @apply font-bold;
 }
 
 .gridServices {
@@ -26,4 +28,24 @@
     @media (min-width: 1024px) {
         @apply grid-cols-2;
     }
+}
+
+.cardTitle {
+    font-size: 28px;
+    line-height: 1.25;
+    @apply font-bold text-white;
+}
+
+.cardDescription {
+    font-size: 14px;
+    @apply text-gray-300;
+}
+
+.features {
+    @apply grid grid-cols-2 sm:grid-cols-3 gap-4;
+}
+
+.featureText {
+    font-size: 14px;
+    @apply text-gray-300;
 }

@@ -15,7 +15,7 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
     };
 
     return (
-        <header className="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
+        <header className="bg-[#303030] backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
             <nav className="container mx-auto px-6 py-1 flex justify-between items-center">
                 <a href="#home" className="inline-flex items-center" aria-label="SABA Marbles home">
                     <img src="/images/logo.png" alt="SABA Marbles" className="h-auto w-auto" />

@@ -121,6 +121,10 @@ yarn test-ci         # run tests in CI
 -   Use SCSS Modules per-component (`component-name.module.scss`)
 -   Keep `globals.scss` minimal (variables, base, scrollbar, print)
 
+### Tailwind spacing quick note
+
+-   `mb-1` = 4px (0.25rem with 16px root)
+
 ## 🔍 SEO
 
 -   Set meta tags in `index.html`
