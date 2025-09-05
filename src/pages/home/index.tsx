@@ -4,15 +4,9 @@ import HeroSection from "@/components/sections/hero";
 import ServicesSection from "@/components/sections/services";
 import StrengthsSection from "@/components/sections/strengths";
 import { ABOUT_DATA, DEMO_LINKS, GAMES, HERO_DATA, SECTION_TITLES, SERVICES, STRENGTHS } from "@/constants";
-import type { ContactForm } from "@/types";
 import React from "react";
 
 const HomePage: React.FC = () => {
-    const handleContactSubmit = (data: ContactForm) => {
-        console.log("Contact form submitted:", data);
-        alert("Thank you for your message! We will get back to you soon.");
-    };
-
     return (
         <>
             {/* Hero Section */}
@@ -34,13 +28,6 @@ const HomePage: React.FC = () => {
 
             {/* About Section */}
             <AboutSection title={SECTION_TITLES.about.title} subtitle={SECTION_TITLES.about.subtitle} about={ABOUT_DATA} />
-
-            {/* Contact Section */}
-            {/* <ContactSection
-                title={SECTION_TITLES.contact.title}
-                subtitle={SECTION_TITLES.contact.subtitle}
-                onSubmit={handleContactSubmit}
-            /> */}
         </>
     );
 };

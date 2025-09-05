@@ -15,6 +15,5 @@ describe("HomePage", () => {
         expect(screen.getByText(SECTION_TITLES.services.title)).toBeInTheDocument();
         expect(screen.getByText(SECTION_TITLES.showcase.title)).toBeInTheDocument();
         expect(screen.getByText(SECTION_TITLES.about.title)).toBeInTheDocument();
-        expect(screen.getByText(SECTION_TITLES.contact.title)).toBeInTheDocument();
     });
 });
