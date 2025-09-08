@@ -26,10 +26,10 @@ describe("GameShowcaseSection Component", () => {
         // Arrange
 
         // Act
-        render(<GameShowcaseSection title="Game Showcase" subtitle="Try our latest games" games={games} demoLinks={demoLinks} />);
+        render(<GameShowcaseSection title="Our Games" subtitle="Try our latest games" games={games} demoLinks={demoLinks} />);
 
         // Assert
-        expect(screen.getByText("Game Showcase")).toBeInTheDocument();
+        expect(screen.getByText("Our Games")).toBeInTheDocument();
         expect(screen.getByText("Try our latest games")).toBeInTheDocument();
     });
 
@@ -37,7 +37,7 @@ describe("GameShowcaseSection Component", () => {
         // Arrange
 
         // Act
-        render(<GameShowcaseSection title="Game Showcase" subtitle="Subtitle" games={games} demoLinks={demoLinks} />);
+        render(<GameShowcaseSection title="Our Games" subtitle="Subtitle" games={games} demoLinks={demoLinks} />);
 
         // Assert
         for (const game of games) {

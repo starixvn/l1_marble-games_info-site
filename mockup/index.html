@@ -1,329 +1,437 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SABA Marble - The Future of RNG Marble Games</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #111827; /* Dark background for a gaming feel */
-            color: #E5E7EB;
-        }
-        .hero-section {
-            background: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 1)), url('https://placehold.co/1920x1080/1a202c/3a475a?text=Dynamic+Soccer+Field') no-repeat center center;
-            background-size: cover;
-        }
-        .card {
-            background-color: #1F2937;
-            border: 1px solid #374151;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.2), 0 4px 6px -2px rgba(59, 130, 246, 0.1);
-        }
-        .btn-primary {
-            background-color: #3B82F6;
-            color: white;
-            transition: background-color 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #2563EB;
-        }
-        .nav-link {
-            position: relative;
-            transition: color 0.3s;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #3B82F6;
-            transition: width 0.3s;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Header & Navigation -->
-    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold text-white">
-                SABA <span class="text-blue-500">Marble</span>
-            </a>
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#home" class="nav-link text-gray-300 hover:text-white">Home</a>
-                <a href="#services" class="nav-link text-gray-300 hover:text-white">Our Services</a>
-                <a href="#showcase" class="nav-link text-gray-300 hover:text-white">Products</a>
-                <a href="#about" class="nav-link text-gray-300 hover:text-white">About Us</a>
-                <a href="#contact" class="btn-primary font-semibold py-2 px-4 rounded-lg">Contact Us</a>
-            </div>
-            <!-- Mobile Menu Button -->
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-white focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
-            </div>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden">
-            <a href="#home" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Home</a>
-            <a href="#services" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Our Services</a>
-            <a href="#showcase" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Products</a>
-            <a href="#about" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">About Us</a>
-            <a href="#contact" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Contact Us</a>
-        </div>
-    </header>
-
-    <main>
-        <!-- Home Section -->
-        <section id="home" class="hero-section text-white text-center py-20 md:py-32">
-            <div class="container mx-auto px-6">
-                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">Experience the Thrill of RNG Marble Games</h1>
-                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">SABA Marble is a revolutionary RNG-simulated sports game designed for fast-paced entertainment and betting. Perfect for sports lovers seeking instant action and quick wins.</p>
-                <a href="#showcase" class="btn-primary font-bold py-3 px-8 rounded-full text-lg">Live Demo</a>
-            </div>
-        </section>
-
-        <!-- Key Strengths Section -->
-        <section id="strengths" class="py-16 md:py-24 bg-gray-900">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Why Choose SABA Marble?</h2>
-                    <p class="text-gray-400 mt-2">The competitive advantages that set us apart.</p>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SABA Marble - The Future of RNG Marble Games</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+        <style>
+            body {
+                font-family: "Inter", sans-serif;
+                background-color: #111827; /* Dark background for a gaming feel */
+                color: #e5e7eb;
+            }
+            .hero-section {
+                background: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 1)),
+                    url("https://placehold.co/1920x1080/1a202c/3a475a?text=Dynamic+Soccer+Field") no-repeat center center;
+                background-size: cover;
+            }
+            .card {
+                background-color: #1f2937;
+                border: 1px solid #374151;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.2), 0 4px 6px -2px rgba(59, 130, 246, 0.1);
+            }
+            .btn-primary {
+                background-color: #3b82f6;
+                color: white;
+                transition: background-color 0.3s ease;
+            }
+            .btn-primary:hover {
+                background-color: #2563eb;
+            }
+            .nav-link {
+                position: relative;
+                transition: color 0.3s;
+            }
+            .nav-link::after {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: -4px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #3b82f6;
+                transition: width 0.3s;
+            }
+            .nav-link:hover::after {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header & Navigation -->
+        <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
+            <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#home" class="text-2xl font-bold text-white"> SABA <span class="text-blue-500">Marble</span> </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-300 hover:text-white">Home</a>
+                    <a href="#services" class="nav-link text-gray-300 hover:text-white">Our Services</a>
+                    <a href="#showcase" class="nav-link text-gray-300 hover:text-white">Products</a>
+                    <a href="#about" class="nav-link text-gray-300 hover:text-white">About Us</a>
+                    <a href="#contact" class="btn-primary font-semibold py-2 px-4 rounded-lg">Contact Us</a>
                 </div>
-                <div class="grid md:grid-cols-4 gap-8">
-                    <!-- Strength 1: Exclusive Design -->
-                    <div class="card p-8 rounded-lg text-center">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-500/20 text-blue-400 mx-auto mb-4">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" /></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Exclusive Design</h3>
-                        <p class="text-gray-400">Our games feature unique, visually stunning designs and dynamic spinner players, creating an immersive and engaging sports experience unlike any other.</p>
-                    </div>
-                    
-                    <!-- Strength 3: Seamless API -->
-                    <div class="card p-8 rounded-lg text-center">
-                         <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-500/20 text-blue-400 mx-auto mb-4">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V4a2 2 0 012-2h8a2 2 0 012 2v4z" /></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Seamlessly integrated via ONE API</h3>
-                        <p class="text-gray-400">Integrate all our games effortlessly with a single, powerful ONE API. A one-time setup gives you access to our entire gaming portfolio.</p>
-                    </div>
-					
-					<!-- Strength 2: Proven Integration -->
-                    <div class="card p-8 rounded-lg text-center">
-                         <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-500/20 text-blue-400 mx-auto mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">SABA Sports & SABA Play Integrated</h3>
-                        <p class="text-gray-400">SABA Sports and Vgaming are now fully integrated—delivering trusted performance, a wider reach, and a seamless gaming experience.</p>
-                    </div>
-					
-					<!-- Strength 4: Proven Success -->
-					<div class="card p-8 rounded-lg text-center">
-						<div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-500/20 text-blue-400 mx-auto mb-4">
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6h13M5 9l7 7-7 7"/>
-							</svg>
-						</div>
-						<h3 class="text-xl font-bold text-white mb-2">Proven Success & Growth</h3>
-						<p class="text-gray-400">
-							Trusted by [number] of players, generating [number] of tickets daily and monthly.<br />
-							Backed by real results — high player engagement and strong ticket volume.<br />
-							Consistent growth with active players every day.
-						</p>
-					</div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
                 </div>
+            </nav>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden">
+                <a href="#home" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Home</a>
+                <a href="#services" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Our Services</a>
+                <a href="#showcase" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Products</a>
+                <a href="#about" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">About Us</a>
+                <a href="#contact" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Contact Us</a>
             </div>
-        </section>
+        </header>
 
-        <!-- Our Services Section -->
-        <section id="services" class="py-16 md:py-24">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Our Services</h2>
-                    <p class="text-gray-400 mt-2">Comprehensive solutions for your iGaming platform.</p>
+        <main>
+            <!-- Home Section -->
+            <section id="home" class="hero-section text-white text-center py-20 md:py-32">
+                <div class="container mx-auto px-6">
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">Experience the Thrill of RNG Marble Games</h1>
+                    <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                        SABA Marble is a revolutionary RNG-simulated sports game designed for fast-paced entertainment and betting. Perfect
+                        for sports lovers seeking instant action and quick wins.
+                    </p>
+                    <a href="#showcase" class="btn-primary font-bold py-3 px-8 rounded-full text-lg">Live Demo</a>
                 </div>
-                <div class="grid lg:grid-cols-2 gap-8 items-start">
-                    <div class="card p-8 rounded-lg">
-                        <h3 class="text-2xl font-bold text-white mb-4">Extensive Odds Feed</h3>
-                        <p class="text-gray-400 mb-6">We provide a diverse range of betting markets to keep your players engaged. Our feed is fast, reliable, and covers all aspects of the game.</p>
-                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-300">
-                            <!-- Market Types List -->
-                            <ul class="space-y-2">
-                                <li>✓ Handicap</li>
-                                <li>✓ Over/Under</li>
-                                <li>✓ Odd/Even</li>
-                                <li>✓ 1X2</li>
-								<li>✓ Home Team O/U</li>
-                                <li>✓ Away Team O/U</li>
-                            </ul>
-                            <ul class="space-y-2">
-                                <li>✓ 1H Handicap</li>
-                                <li>✓ 1H Over/Under</li>
-                                <li>✓ 1H Odd/Even</li>
-                                <li>✓ 1H 1X2</li>
-								<li>✓ 1H Home Team O/U</li>
-                                <li>✓ 1H Away Team O/U</li>
-                            </ul>
+            </section>
+
+            <!-- Key Strengths Section -->
+            <section id="strengths" class="py-16 md:py-24 bg-gray-900">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white">Why Choose SABA Marble?</h2>
+                        <p class="text-gray-400 mt-2">The competitive advantages that set us apart.</p>
+                    </div>
+                    <div class="grid md:grid-cols-4 gap-8">
+                        <!-- Strength 1: Exclusive Design -->
+                        <div class="card p-8 rounded-lg text-center">
+                            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-500/20 text-blue-400 mx-auto mb-4">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-8 w-8"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                                    />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Exclusive Design</h3>
+                            <p class="text-gray-400">
+                                Our games feature unique, visually stunning designs and dynamic spinner players, creating an immersive and
+                                engaging sports experience unlike any other.
+                            </p>
+                        </div>
+
+                        <!-- Strength 3: Seamless API -->
+                        <div class="card p-8 rounded-lg text-center">
+                            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-500/20 text-blue-400 mx-auto mb-4">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-8 w-8"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V4a2 2 0 012-2h8a2 2 0 012 2v4z"
+                                    />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Seamlessly integrated via ONE API</h3>
+                            <p class="text-gray-400">
+                                Integrate all our games effortlessly with a single, powerful ONE API. A one-time setup gives you access to
+                                our entire gaming portfolio.
+                            </p>
+                        </div>
+
+                        <!-- Strength 2: Proven Integration -->
+                        <div class="card p-8 rounded-lg text-center">
+                            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-500/20 text-blue-400 mx-auto mb-4">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-8 w-8"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">SABA Sports & SABA Play Integrated</h3>
+                            <p class="text-gray-400">
+                                SABA Sports and Vgaming are now fully integrated—delivering trusted performance, a wider reach, and a
+                                seamless gaming experience.
+                            </p>
+                        </div>
+
+                        <!-- Strength 4: Proven Success -->
+                        <div class="card p-8 rounded-lg text-center">
+                            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-500/20 text-blue-400 mx-auto mb-4">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-8 w-8"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6h13M5 9l7 7-7 7" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Proven Success & Growth</h3>
+                            <p class="text-gray-400">
+                                Trusted by [number] of players, generating [number] of tickets daily and monthly.<br />
+                                Backed by real results — high player engagement and strong ticket volume.<br />
+                                Consistent growth with active players every day.
+                            </p>
                         </div>
                     </div>
-                    <div class="space-y-8">
+                </div>
+            </section>
+
+            <!-- Our Services Section -->
+            <section id="services" class="py-16 md:py-24">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white">Our Services</h2>
+                        <p class="text-gray-400 mt-2">Comprehensive solutions for your iGaming platform.</p>
+                    </div>
+                    <div class="grid lg:grid-cols-2 gap-8 items-start">
                         <div class="card p-8 rounded-lg">
-                            <h3 class="text-2xl font-bold text-white mb-4">Exclusive Game Content Creation</h3>
-                             <!-- NOTE: You will provide the video later. For now, this text describes it. -->
-                            <p class="text-gray-400">Our service includes exclusively designed, high-quality video simulations of the matches. This provides a dynamic and visually appealing experience for players, far beyond simple score tickers.</p>
-							<p class="text-gray-400">We also offer custom design services, creating tailored video content to match your brand and audience.</p>
+                            <h3 class="text-2xl font-bold text-white mb-4">Extensive Odds Feed</h3>
+                            <p class="text-gray-400 mb-6">
+                                We provide a diverse range of betting markets to keep your players engaged. Our feed is fast, reliable, and
+                                covers all aspects of the game.
+                            </p>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-300">
+                                <!-- Market Types List -->
+                                <ul class="space-y-2">
+                                    <li>✓ Handicap</li>
+                                    <li>✓ Over/Under</li>
+                                    <li>✓ Odd/Even</li>
+                                    <li>✓ 1X2</li>
+                                    <li>✓ Home Team O/U</li>
+                                    <li>✓ Away Team O/U</li>
+                                </ul>
+                                <ul class="space-y-2">
+                                    <li>✓ 1H Handicap</li>
+                                    <li>✓ 1H Over/Under</li>
+                                    <li>✓ 1H Odd/Even</li>
+                                    <li>✓ 1H 1X2</li>
+                                    <li>✓ 1H Home Team O/U</li>
+                                    <li>✓ 1H Away Team O/U</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="space-y-8">
+                            <div class="card p-8 rounded-lg">
+                                <h3 class="text-2xl font-bold text-white mb-4">Exclusive Game Content Creation</h3>
+                                <!-- NOTE: You will provide the video later. For now, this text describes it. -->
+                                <p class="text-gray-400">
+                                    Our service includes exclusively designed, high-quality video simulations of the matches. This provides
+                                    a dynamic and visually appealing experience for players, far beyond simple score tickers.
+                                </p>
+                                <p class="text-gray-400">
+                                    We also offer custom design services, creating tailored video content to match your brand and audience.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </section>
+
+            <!-- Our Games Section -->
+            <section id="showcase" class="py-16 md:py-24 bg-gray-900">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white">Our Games</h2>
+                        <p class="text-gray-400 mt-2">Functionally identical, aesthetically unique. Choose your style.</p>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Game 1: Original -->
+                        <div class="card rounded-lg overflow-hidden">
+                            <!-- NOTE: Replace this placeholder with the actual game image -->
+                            <img
+                                src="https://placehold.co/600x800/1d232a/ffffff?text=Original+Theme"
+                                alt="SABA Marble Original Theme"
+                                class="w-full h-auto object-cover"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x800/1d232a/ffffff?text=Image+Not+Found';"
+                            />
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white">Original Theme</h3>
+                                <p class="text-gray-400 mt-2">
+                                    The original game design, with a colorful cartoon stadium and playful match visuals.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Game 2: Galaxy -->
+                        <div class="card rounded-lg overflow-hidden">
+                            <!-- NOTE: Replace this placeholder with the actual game image -->
+                            <img
+                                src="https://placehold.co/600x800/1d232a/ffffff?text=Galaxy+Theme"
+                                alt="SABA Marble Galaxy Theme"
+                                class="w-full h-auto object-cover"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x800/1d232a/ffffff?text=Image+Not+Found';"
+                            />
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white">Galaxy Theme</h3>
+                                <p class="text-gray-400 mt-2">A futuristic, cosmic design for a modern gaming experience.</p>
+                            </div>
+                        </div>
+                        <!-- Game 3: EPL -->
+                        <div class="card rounded-lg overflow-hidden">
+                            <!-- NOTE: Replace this placeholder with the actual game image -->
+                            <img
+                                src="https://placehold.co/600x800/1d232a/ffffff?text=EPL+Theme"
+                                alt="SABA Marble EPL Theme"
+                                class="w-full h-auto object-cover"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x800/1d232a/ffffff?text=Image+Not+Found';"
+                            />
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white">EPL Theme</h3>
+                                <p class="text-gray-400 mt-2">Themed after the English Premier League for true football fans.</p>
+                            </div>
+                        </div>
+                        <!-- Demo Links Section -->
+                        <div class="col-span-3 text-center mt-12">
+                            <h3 class="text-2xl font-bold text-white mb-4">Try Our Demo Games Now</h3>
+                            <p class="text-gray-400 mb-4">Play for free on:</p>
+                            <div class="flex flex-wrap justify-center gap-4">
+                                <a href="#" class="btn-primary py-2 px-6 rounded-full">SABA Sports Demo</a>
+                                <a href="#" class="btn-primary py-2 px-6 rounded-full">SABAPlay Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Us Section -->
+            <section id="about" class="py-16 md:py-24">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white">About SABA Marbles</h2>
+                        <p class="text-gray-400 mt-2">The innovative iGaming developer behind Marble.</p>
+                    </div>
+                    <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+                        <!-- Mission -->
+                        <div>
+                            <h3 class="text-xl font-bold text-blue-400 mb-2">Our Mission</h3>
+                            <p class="text-gray-400">
+                                To deliver thrilling and fair iGaming experiences by blending innovative technology with a passion for
+                                sports entertainment.
+                            </p>
+                        </div>
+                        <!-- Vision -->
+                        <div>
+                            <h3 class="text-xl font-bold text-blue-400 mb-2">Our Vision</h3>
+                            <p class="text-gray-400">
+                                To become a leading global provider of RNG-based sports games, recognized for our creativity, reliability,
+                                and player-centric approach.
+                            </p>
+                        </div>
+                        <!-- Core Values -->
+                        <div>
+                            <h3 class="text-xl font-bold text-blue-400 mb-2">Core Values</h3>
+                            <p class="text-gray-400">
+                                Innovation, Integrity, and Entertainment. These principles guide every game we create and every partnership
+                                we build.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Us Section -->
+            <section id="contact" class="py-16 md:py-24 bg-gray-900">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white">Get In Touch</h2>
+                        <p class="text-gray-400 mt-2">Have a question or want to discuss a partnership? Contact us.</p>
+                    </div>
+                    <div class="max-w-2xl mx-auto">
+                        <form action="#" method="POST" class="space-y-6">
+                            <!-- NOTE: You need to set up a backend service to receive form submissions. -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Your Name"
+                                    required
+                                    class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                />
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Your Email"
+                                    required
+                                    class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                />
+                            </div>
+                            <input
+                                type="text"
+                                name="subject"
+                                placeholder="Subject"
+                                required
+                                class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            />
+                            <textarea
+                                name="message"
+                                rows="5"
+                                placeholder="Your Message"
+                                required
+                                class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            ></textarea>
+                            <div class="text-center">
+                                <button type="submit" class="btn-primary font-bold py-3 px-8 rounded-full text-lg">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 border-t border-gray-700">
+            <div class="container mx-auto px-6 py-8 text-center text-gray-400">
+                <!-- NOTE: Add your social media links here -->
+                <div class="flex justify-center space-x-6 mb-4">
+                    <a href="#" class="hover:text-white">Facebook</a>
+                    <a href="#" class="hover:text-white">Twitter</a>
+                    <a href="#" class="hover:text-white">LinkedIn</a>
+                </div>
+                <p>&copy; 2025 SABA Marbles. All Rights Reserved.</p>
             </div>
-        </section>
+        </footer>
 
-        <!-- Game Showcase Section -->
-        <section id="showcase" class="py-16 md:py-24 bg-gray-900">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Game Showcase</h2>
-                    <p class="text-gray-400 mt-2">Functionally identical, aesthetically unique. Choose your style.</p>
-                </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Game 1: Original -->
-                    <div class="card rounded-lg overflow-hidden">
-                        <!-- NOTE: Replace this placeholder with the actual game image -->
-                        <img src="https://placehold.co/600x800/1d232a/ffffff?text=Original+Theme" alt="SABA Marble Original Theme" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x800/1d232a/ffffff?text=Image+Not+Found';">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white">Original Theme</h3>
-                            <p class="text-gray-400 mt-2">The original game design, with a colorful cartoon stadium and playful match visuals.</p>
-                        </div>
-                    </div>
-                    <!-- Game 2: Galaxy -->
-                    <div class="card rounded-lg overflow-hidden">
-                        <!-- NOTE: Replace this placeholder with the actual game image -->
-                        <img src="https://placehold.co/600x800/1d232a/ffffff?text=Galaxy+Theme" alt="SABA Marble Galaxy Theme" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x800/1d232a/ffffff?text=Image+Not+Found';">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white">Galaxy Theme</h3>
-                            <p class="text-gray-400 mt-2">A futuristic, cosmic design for a modern gaming experience.</p>
-                        </div>
-                    </div>
-                    <!-- Game 3: EPL -->
-                    <div class="card rounded-lg overflow-hidden">
-                        <!-- NOTE: Replace this placeholder with the actual game image -->
-                        <img src="https://placehold.co/600x800/1d232a/ffffff?text=EPL+Theme" alt="SABA Marble EPL Theme" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x800/1d232a/ffffff?text=Image+Not+Found';">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white">EPL Theme</h3>
-                            <p class="text-gray-400 mt-2">Themed after the English Premier League for true football fans.</p>
-                        </div>
-                    </div>
-					<!-- Demo Links Section -->
-					<div class="col-span-3 text-center mt-12">
-						<h3 class="text-2xl font-bold text-white mb-4">Try Our Demo Games Now</h3>
-						<p class="text-gray-400 mb-4">Play for free on:</p>
-						<div class="flex flex-wrap justify-center gap-4">
-							<a href="#" class="btn-primary py-2 px-6 rounded-full">SABA Sports Demo</a>
-							<a href="#" class="btn-primary py-2 px-6 rounded-full">SABAPlay Demo</a>
-						</div>
-					</div>
-					
-                </div>
-            </div>
-        </section>
+        <script>
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById("mobile-menu-button");
+            const mobileMenu = document.getElementById("mobile-menu");
 
-        <!-- About Us Section -->
-        <section id="about" class="py-16 md:py-24">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                     <h2 class="text-3xl md:text-4xl font-bold text-white">About SABA Marbles</h2>
-                    <p class="text-gray-400 mt-2">The innovative iGaming developer behind Marble.</p>
-                </div>
-                <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 text-center">
-                     <!-- Mission -->
-                    <div>
-                        <h3 class="text-xl font-bold text-blue-400 mb-2">Our Mission</h3>
-                        <p class="text-gray-400">To deliver thrilling and fair iGaming experiences by blending innovative technology with a passion for sports entertainment.</p>
-                    </div>
-                     <!-- Vision -->
-                    <div>
-                        <h3 class="text-xl font-bold text-blue-400 mb-2">Our Vision</h3>
-                        <p class="text-gray-400">To become a leading global provider of RNG-based sports games, recognized for our creativity, reliability, and player-centric approach.</p>
-                    </div>
-                     <!-- Core Values -->
-                    <div>
-                        <h3 class="text-xl font-bold text-blue-400 mb-2">Core Values</h3>
-                        <p class="text-gray-400">Innovation, Integrity, and Entertainment. These principles guide every game we create and every partnership we build.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Us Section -->
-        <section id="contact" class="py-16 md:py-24 bg-gray-900">
-            <div class="container mx-auto px-6">
-                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Get In Touch</h2>
-                    <p class="text-gray-400 mt-2">Have a question or want to discuss a partnership? Contact us.</p>
-                </div>
-                <div class="max-w-2xl mx-auto">
-                    <form action="#" method="POST" class="space-y-6">
-                        <!-- NOTE: You need to set up a backend service to receive form submissions. -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <input type="text" name="name" placeholder="Your Name" required class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            <input type="email" name="email" placeholder="Your Email" required class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        </div>
-                        <input type="text" name="subject" placeholder="Subject" required class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <textarea name="message" rows="5" placeholder="Your Message" required class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                        <div class="text-center">
-                            <button type="submit" class="btn-primary font-bold py-3 px-8 rounded-full text-lg">Send Message</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 border-t border-gray-700">
-        <div class="container mx-auto px-6 py-8 text-center text-gray-400">
-             <!-- NOTE: Add your social media links here -->
-            <div class="flex justify-center space-x-6 mb-4">
-                <a href="#" class="hover:text-white">Facebook</a>
-                <a href="#" class="hover:text-white">Twitter</a>
-                <a href="#" class="hover:text-white">LinkedIn</a>
-            </div>
-            <p>&copy; 2025 SABA Marbles. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when a link is clicked
-        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
-        for (let link of mobileMenuLinks) {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+            mobileMenuButton.addEventListener("click", () => {
+                mobileMenu.classList.toggle("hidden");
             });
-        }
-    </script>
 
-</body>
+            // Close mobile menu when a link is clicked
+            const mobileMenuLinks = mobileMenu.getElementsByTagName("a");
+            for (let link of mobileMenuLinks) {
+                link.addEventListener("click", () => {
+                    mobileMenu.classList.add("hidden");
+                });
+            }
+        </script>
+    </body>
 </html>

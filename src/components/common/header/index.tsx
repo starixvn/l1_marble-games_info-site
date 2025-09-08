@@ -28,6 +28,8 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
                             <Button
                                 key={`nav-button-${index}-${link.href}`}
                                 href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 variant="primary"
                                 size="sm"
                                 className="font-semibold"

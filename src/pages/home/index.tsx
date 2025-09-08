@@ -18,7 +18,7 @@ const HomePage: React.FC = () => {
             {/* Services Section */}
             <ServicesSection title={SECTION_TITLES.services.title} subtitle={SECTION_TITLES.services.subtitle} services={SERVICES} />
 
-            {/* Game Showcase Section */}
+            {/* Our Games Section */}
             <GameShowcaseSection
                 title={SECTION_TITLES.showcase.title}
                 subtitle={SECTION_TITLES.showcase.subtitle}

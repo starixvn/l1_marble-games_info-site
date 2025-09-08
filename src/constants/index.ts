@@ -7,7 +7,7 @@ export const NAV_LINKS: NavLink[] = [
     { href: "#services", label: "Our Services" },
     { href: "#showcase", label: "Products" },
     { href: "#about", label: "About Us" },
-    { href: "#contact", label: "Contact Us", isButton: true },
+    { href: "https://www.sabaplay.com/en/contact", label: "Contact Us", isButton: true },
 ];
 
 // Export strengths data
@@ -37,11 +37,11 @@ export const SERVICES: ServiceCard[] = [
     {
         title: "Exclusive Game Content Creation",
         description:
-            "Our service includes exclusively designed, high-quality video simulations of the matches. This provides a dynamic and visually appealing experience for players, far beyond simple score tickers. We also offer custom design services, creating tailored video content to match your brand and audience.",
+            "Our service delivers high-quality, custom-designed video simulations that create a dynamic and visually engaging experience for players. We also provide tailored content services, designing unique video experiences to match your brand and audience.",
     },
 ];
 
-// Game showcase data
+// Our Games data
 export const GAMES: GameShowcase[] = [
     {
         image: "/images/game-showcase/orginal.png",
@@ -65,8 +65,8 @@ export const GAMES: GameShowcase[] = [
 
 // Demo links
 export const DEMO_LINKS = {
-    sabaSports: "#saba-sports-demo",
-    sabaPlay: "#saba-play-demo",
+    sabaSports: "https://g943gp.pvm5062.net/en-US/live/9994",
+    sabaPlay: "https://client.playvgames.com/site-114/",
 };
 
 // About section data
@@ -106,7 +106,7 @@ export const COPYRIGHT_TEXT = "© 2025 SABA Marbles. All Rights Reserved.";
 export const HERO_DATA = {
     title: "Experience the Thrill of RNG Marble Games",
     description:
-        "SABA Marble is a revolutionary RNG-simulated sports game designed for fast-paced entertainment and betting. Perfect for sports lovers seeking instant action and quick wins.",
+        "SABA Marble, powered by SABAPLAY, is a revolutionary RNG-simulated sports game designed for fast-paced entertainment and betting. Perfect for sports lovers seeking instant action and quick wins.",
     ctaText: "Live Demo",
     ctaHref: "#showcase",
 };
@@ -122,7 +122,7 @@ export const SECTION_TITLES = {
         subtitle: "Comprehensive solutions for your iGaming platform.",
     },
     showcase: {
-        title: "Game Showcase",
+        title: "Our Games",
         subtitle: "Functionally identical, aesthetically unique. Choose your style.",
     },
     about: {

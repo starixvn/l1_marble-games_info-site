@@ -38,10 +38,24 @@ const GameShowcaseSection: React.FC<GameShowcaseProps> = ({ title, subtitle, gam
                         <h3 className={`${styles.headingLg} text-gradient-brand-red mb-6`}>Try Our Demo Games Now</h3>
                         <p className={`text-gray-400 mb-6 ${styles.textBase}`}>Play for free on:</p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <Button href={demoLinks.sabaSports} variant="primary" size="md" className="rounded-full">
+                            <Button
+                                href={demoLinks.sabaSports}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                variant="primary"
+                                size="md"
+                                className="rounded-full"
+                            >
                                 SABA Sports Demo
                             </Button>
-                            <Button href={demoLinks.sabaPlay} variant="primary" size="md" className="rounded-full">
+                            <Button
+                                href={demoLinks.sabaPlay}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                variant="primary"
+                                size="md"
+                                className="rounded-full"
+                            >
                                 SABAPlay Demo
                             </Button>
                         </div>

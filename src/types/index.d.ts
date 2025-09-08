@@ -104,6 +104,8 @@ export interface ButtonProps {
     variant?: "primary" | "secondary";
     size?: "sm" | "md" | "lg";
     href?: string;
+    target?: "_blank" | "_self" | "_parent" | "_top";
+    rel?: string;
     onClick?: () => void;
     className?: string;
     type?: "button" | "submit" | "reset";
