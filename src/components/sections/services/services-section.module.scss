@@ -24,7 +24,7 @@
 }
 
 .gridServices {
-    @apply grid gap-8 items-start;
+    @apply grid gap-8 items-stretch;
     @media (min-width: 1024px) {
         @apply grid-cols-2;
     }

@@ -15,11 +15,11 @@ const GameShowcaseSection: React.FC<GameShowcaseProps> = ({ title, subtitle, gam
 
                 <div className={styles.gridShowcase}>
                     {games.map((game, index) => (
-                        <Card key={`game-${index}-${game.title.toLowerCase().replace(/\s+/g, "-")}`} className="rounded-lg overflow-hidden">
+                        <Card key={`game-${index}-${game.title.toLowerCase().replace(/\s+/g, "-")}`} className="overflow-hidden">
                             <img
                                 src={game.image}
                                 alt={game.alt}
-                                className="w-full h-auto object-cover"
+                                className="w-full h-auto object-cover block"
                                 onError={(e) => {
                                     const target = e.target as HTMLImageElement;
                                     target.onerror = null;

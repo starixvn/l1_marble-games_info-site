@@ -14,7 +14,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ title, subtitle, serv
 
                 <div className={styles.gridServices}>
                     {services.map((service, index) => (
-                        <Card key={`service-${index}-${service.title.toLowerCase().replace(/\s+/g, "-")}`} className="p-8">
+                        <Card key={`service-${index}-${service.title.toLowerCase().replace(/\s+/g, "-")}`} className="p-8 h-full">
                             <h3 className={`${styles.cardTitle} mb-4`}>{service.title}</h3>
                             <p className={`${styles.cardDescription} mb-6`}>{service.description}</p>
 
