@@ -25,6 +25,7 @@ export interface GameShowcase {
     title: string;
     description: string;
     alt: string;
+    link: string;
 }
 
 export interface AboutSection {
@@ -115,6 +116,7 @@ export interface CardProps {
     children: React.ReactNode;
     className?: string;
     hover?: boolean;
+    onClick?: () => void;
 }
 
 export interface InputProps {

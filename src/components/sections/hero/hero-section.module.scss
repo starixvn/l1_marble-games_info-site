@@ -28,11 +28,20 @@
 }
 
 .imageWrapper {
-    @apply rounded-2xl overflow-hidden;
+    @apply relative rounded-2xl overflow-hidden;
 }
 
 .image {
     @apply w-full h-auto block;
+}
+
+/* Keep iframe responsive with 980x492 (~ aspect-ratio: 980 / 492 ≈ 1.991) */
+.mediaFrame {
+    aspect-ratio: 980 / 492;
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 0;
 }
 
 @media (min-width: 768px) {

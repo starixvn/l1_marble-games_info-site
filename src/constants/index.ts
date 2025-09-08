@@ -48,18 +48,21 @@ export const GAMES: GameShowcase[] = [
         title: "Original Theme",
         description: "The original game design, with a colorful cartoon stadium and playful match visuals.",
         alt: "SABA Marble Original Theme",
+        link: "https://www.youtube.com/embed/6_7AdtN9xS8?si=En0zikNMT3pjKw1B",
     },
     {
         image: "/images/game-showcase/galaxy.png",
         title: "Galaxy Theme",
         description: "A futuristic, cosmic design for a modern gaming experience.",
         alt: "SABA Marble Galaxy Theme",
+        link: "https://www.youtube.com/embed/aGZnm-0Yulo?si=plvMrLOZV09igrTK",
     },
     {
         image: "/images/game-showcase/premier_league.png",
         title: "Premier League Theme",
         description: "Inspired by the English Premier League, designed for true football fans.",
         alt: "SABA Marble Premier League Theme",
+        link: "https://www.youtube.com/embed/M1bW2xtaikY?si=h-u49guHuypNyE5C",
     },
 ];
 
@@ -134,3 +137,5 @@ export const SECTION_TITLES = {
         subtitle: "Have a question or want to discuss a partnership? Contact us.",
     },
 };
+
+export const LINK_LIVE_DEMO = "https://mgtv.ap.vgaming88.net/?game=2000";

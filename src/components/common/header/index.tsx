@@ -69,7 +69,7 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
             </nav>
 
             {/* Mobile Menu */}
-            <div className={`md:hidden ${isMobileMenuOpen ? styles.mobileMenuOpen : styles.mobileMenu}`}>
+            <div className={`md:hidden space-y-8 ${isMobileMenuOpen ? styles.mobileMenuOpen : styles.mobileMenu}`}>
                 {navLinks.map((link, index) => (
                     <a
                         key={`mobile-nav-${index}-${link.href}`}

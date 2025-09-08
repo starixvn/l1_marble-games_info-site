@@ -1,10 +1,33 @@
 import Button from "@/components/ui/button";
 import Card from "@/components/ui/card";
+import Modal from "@/components/ui/modal";
 import { GameShowcaseProps } from "@/types";
-import React from "react";
+import React, { useCallback, useState } from "react";
 import styles from "./game-showcase-section.module.scss";
 
 const GameShowcaseSection: React.FC<GameShowcaseProps> = ({ title, subtitle, games, demoLinks }) => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
+
+    const withAutoplay = useCallback((url: string) => {
+        const hasQuery = url.includes("?");
+        const sep = hasQuery ? "&" : "?";
+        // Ensure autoplay and rel params are present
+        return `${url}${sep}autoplay=1&rel=0`;
+    }, []);
+
+    const openVideo = useCallback(
+        (link: string) => {
+            setSelectedVideoUrl(withAutoplay(link));
+            setIsModalOpen(true);
+        },
+        [withAutoplay]
+    );
+
+    const closeVideo = useCallback(() => {
+        setIsModalOpen(false);
+        setSelectedVideoUrl(null);
+    }, []);
     return (
         <section id="showcase" className={`${styles.sectionPadding} bg-gray-900`}>
             <div className="container mx-auto px-6">
@@ -15,7 +38,11 @@ const GameShowcaseSection: React.FC<GameShowcaseProps> = ({ title, subtitle, gam
 
                 <div className={styles.gridShowcase}>
                     {games.map((game, index) => (
-                        <Card key={`game-${index}-${game.title.toLowerCase().replace(/\s+/g, "-")}`} className="overflow-hidden">
+                        <Card
+                            key={`game-${index}-${game.title.toLowerCase().replace(/\s+/g, "-")}`}
+                            className="overflow-hidden cursor-pointer"
+                            onClick={() => openVideo(game.link)}
+                        >
                             <img
                                 src={game.image}
                                 alt={game.alt}
@@ -32,6 +59,17 @@ const GameShowcaseSection: React.FC<GameShowcaseProps> = ({ title, subtitle, gam
                             </div>
                         </Card>
                     ))}
+                    <Modal isOpen={isModalOpen} onClose={closeVideo}>
+                        {selectedVideoUrl && (
+                            <iframe
+                                src={selectedVideoUrl}
+                                title="Game preview"
+                                allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+                                allowFullScreen
+                                className="w-full h-full"
+                            />
+                        )}
+                    </Modal>
 
                     {/* Demo Links Section */}
                     <div className="md:col-span-3 text-center mt-12">
