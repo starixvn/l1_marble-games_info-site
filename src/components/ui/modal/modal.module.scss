@@ -19,14 +19,16 @@
 }
 
 .closeButton {
-    @apply absolute -top-10 -right-10 z-10 w-8 h-8 rounded-full inline-flex items-center justify-center text-brand transition-colors;
+    @apply absolute -top-10 -right-10 z-10 w-8 h-8 rounded-full inline-flex items-center justify-center transition-colors;
     background: transparent;
     border: none;
     cursor: pointer;
+    color: var(--brand-text);
 }
 
 .closeButton:hover {
-    @apply text-brand bg-white/5;
+    @apply bg-white/5;
+    color: var(--brand-text);
 }
 
 .closeButton:focus-visible {
