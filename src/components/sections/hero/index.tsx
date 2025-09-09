@@ -7,7 +7,7 @@ import styles from "./hero-section.module.scss";
 const HeroSection: React.FC<HeroSectionProps> = ({ title, description, ctaText, ctaHref }) => {
     const [isIframeLoaded, setIsIframeLoaded] = useState(false);
     return (
-        <section id="home" className={`${styles.heroSection} text-white text-center py-20 md:py-32`}>
+        <section id="home" className={`${styles.heroSection} text-white text-center py-16`}>
             <div className="container mx-auto px-6">
                 <h1 className={`${styles.headingXl} text-gradient-brand-red mb-6 ${styles.animateFadeInUp}`}>{title}</h1>
                 <p

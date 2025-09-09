@@ -26,4 +26,18 @@
         background-clip: text;
         color: transparent;
     }
+
+    /* Override container max-width to 1200px (75rem) for xl and 2xl */
+    @media (min-width: 80rem) {
+        /* xl ≥ 1280px */
+        .container {
+            max-width: 75rem; /* 1200px */
+        }
+    }
+    @media (min-width: 96rem) {
+        /* 2xl ≥ 1536px */
+        .container {
+            max-width: 75rem; /* 1200px */
+        }
+    }
 }

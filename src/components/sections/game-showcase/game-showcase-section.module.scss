@@ -1,10 +1,7 @@
 @reference "tailwindcss";
 
 .sectionPadding {
-    @apply py-16;
-    @media (min-width: 768px) {
-        @apply py-20;
-    }
+    padding-bottom: 64px;
 }
 
 /* 48px => 3rem on all screens per mockup */
