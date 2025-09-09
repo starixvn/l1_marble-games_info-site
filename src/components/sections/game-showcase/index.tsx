@@ -32,15 +32,15 @@ const GameShowcaseSection: React.FC<GameShowcaseProps> = ({ title, subtitle, gam
         <section id="showcase" className={`${styles.sectionPadding} bg-gray-900`}>
             <div className="container mx-auto px-6">
                 <div className="text-center mb-12">
-                    <h2 className={`${styles.headingLg} text-gradient-brand-red mb-2`}>{title}</h2>
-                    <p className={`text-gray-400 mt-2 ${styles.textBase}`}>{subtitle}</p>
+                    <h2 className={`${styles.headingLg} text-gradient-brand-red mb-6`}>{title}</h2>
+                    <p className={`text-brand mt-2 ${styles.textBase}`}>{subtitle}</p>
                 </div>
 
                 <div className={styles.gridShowcase}>
                     {games.map((game, index) => (
                         <Card
                             key={`game-${index}-${game.title.toLowerCase().replace(/\s+/g, "-")}`}
-                            className="overflow-hidden cursor-pointer"
+                            className="overflow-hidden cursor-pointer min-h-[370px]"
                             onClick={() => openVideo(game.link)}
                         >
                             <img
@@ -53,9 +53,9 @@ const GameShowcaseSection: React.FC<GameShowcaseProps> = ({ title, subtitle, gam
                                     target.src = "https://placehold.co/600x800/1d232a/ffffff?text=Image+Not+Found";
                                 }}
                             />
-                            <div className="p-6">
+                            <div className="p-6 text-center">
                                 <h3 className={`${styles.headingMd} text-white mb-2`}>{game.title}</h3>
-                                <p className={`text-gray-400 mt-2 ${styles.textSm}`}>{game.description}</p>
+                                <p className={`text-brand mt-2 ${styles.textSm}`}>{game.description}</p>
                             </div>
                         </Card>
                     ))}
@@ -74,7 +74,7 @@ const GameShowcaseSection: React.FC<GameShowcaseProps> = ({ title, subtitle, gam
                     {/* Demo Links Section */}
                     <div className="md:col-span-3 text-center mt-12">
                         <h3 className={`${styles.headingLg} text-gradient-brand-red mb-6`}>Try Our Demo Games Now</h3>
-                        <p className={`text-gray-400 mb-6 ${styles.textBase}`}>Play for free on:</p>
+                        <p className={`text-brand mb-6 ${styles.textBase}`}>Play for free on:</p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <Button
                                 href={demoLinks.sabaSports}

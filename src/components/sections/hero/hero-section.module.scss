@@ -5,7 +5,7 @@
 }
 
 .headingXl {
-    @apply text-4xl font-extrabold leading-tight text-red-500;
+    @apply text-5xl font-extrabold leading-tight;
 }
 
 .textBody {
@@ -46,11 +46,11 @@
 
 @media (min-width: 768px) {
     .headingXl {
-        @apply text-6xl;
+        @apply text-5xl;
     }
 
     .textBody {
-        @apply text-xl;
+        @apply text-lg;
     }
 
     .animateFadeInUp {

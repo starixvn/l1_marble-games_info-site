@@ -30,15 +30,15 @@ const StrengthsSection: React.FC<StrengthsSectionProps> = ({ title, subtitle, st
         <section id="strengths" className={`${styles.sectionPadding} bg-gray-900`}>
             <div className="container mx-auto px-6">
                 <div className="text-center mb-12">
-                    <h2 className={`${styles.headingLg} text-gradient-brand-red mb-2`}>{title}</h2>
-                    <p className="text-gray-400 mt-2">{subtitle}</p>
+                    <h2 className={`${styles.headingLg} text-gradient-brand-red mb-6`}>{title}</h2>
+                    <p className={`${styles.textBody} text-brand mt-2`}>{subtitle}</p>
                 </div>
 
                 <div className={styles.gridStrengths}>
                     {strengths.map((strength, index) => (
                         <Card
                             key={`strength-${index}-${strength.title.toLowerCase().replace(/\s+/g, "-")}`}
-                            className="p-8 text-center hover"
+                            className={`p-8 text-center hover ${styles.card}`}
                         >
                             {strength.image ? (
                                 <div className={styles.imageContainer}>
@@ -49,8 +49,8 @@ const StrengthsSection: React.FC<StrengthsSectionProps> = ({ title, subtitle, st
                                     {STRENGTH_ICONS[index] || <StarIcon key="strength-default-icon" />}
                                 </div>
                             )}
-                            <h3 className={`${styles.headingMd} text-white mb-2`}>{strength.title}</h3>
-                            <p className="text-gray-400">{strength.description}</p>
+                            <h3 className={`${styles.headingMd} text-white mb-3`}>{strength.title}</h3>
+                            <p className={`${styles.textSm} text-brand`}>{strength.description}</p>
                         </Card>
                     ))}
                 </div>

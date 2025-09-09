@@ -37,7 +37,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ title, subtitle, onSubm
             <div className="container mx-auto px-6">
                 <div className="text-center mb-12">
                     <h2 className={`${styles.headingLg} text-white mb-2`}>{title}</h2>
-                    <p className="text-gray-400 mt-2">{subtitle}</p>
+                    <p className="text-brand mt-2">{subtitle}</p>
                 </div>
 
                 <div className="max-w-2xl mx-auto">

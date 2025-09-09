@@ -31,7 +31,7 @@
 }
 
 .gridShowcase {
-    @apply grid gap-8;
+    @apply grid gap-6;
     @media (min-width: 768px) {
         @apply grid-cols-3;
     }

@@ -9,9 +9,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description, ctaText, 
     return (
         <section id="home" className={`${styles.heroSection} text-white text-center py-20 md:py-32`}>
             <div className="container mx-auto px-6">
-                <h1 className={`${styles.headingXl} mb-4 ${styles.animateFadeInUp}`}>{title}</h1>
+                <h1 className={`${styles.headingXl} text-gradient-brand-red mb-6 ${styles.animateFadeInUp}`}>{title}</h1>
                 <p
-                    className={`${styles.textBody} text-gray-300 max-w-3xl mx-auto mb-8 ${styles.animateFadeInUp}`}
+                    className={`${styles.textBody} text-brand max-w-3xl mx-auto mb-8 ${styles.animateFadeInUp}`}
                     style={{ animationDelay: "0.2s" }}
                 >
                     {description}

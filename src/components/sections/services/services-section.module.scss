@@ -24,7 +24,7 @@
 }
 
 .gridServices {
-    @apply grid gap-8 items-stretch;
+    @apply grid gap-6 items-stretch;
     @media (min-width: 1024px) {
         @apply grid-cols-2;
     }
@@ -38,7 +38,6 @@
 
 .cardDescription {
     font-size: 14px;
-    @apply text-gray-300;
 }
 
 .features {
@@ -47,5 +46,8 @@
 
 .featureText {
     font-size: 14px;
-    @apply text-gray-300;
+}
+
+.serviceCard {
+    min-height: 342px;
 }
