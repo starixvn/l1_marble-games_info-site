@@ -23,7 +23,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description, ctaText, 
                 </div>
                 <div className={`${styles.imageWrapper} mt-10 md:mt-12 ${styles.animateFadeInUp}`} style={{ animationDelay: "0.6s" }}>
                     <img
-                        src="/images/hero/demo_marble_game.png"
+                        src="/images/hero/demo_marble_game.png?v=1"
                         alt="RNG Marble Games arena preview"
                         className={styles.image}
                         loading="eager"

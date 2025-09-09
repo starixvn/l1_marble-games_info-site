@@ -35,9 +35,9 @@
     @apply w-full h-auto block;
 }
 
-/* Keep iframe responsive with 980x492 (~ aspect-ratio: 980 / 492 ≈ 1.991) */
+/* Keep iframe responsive with 960x540 (~ aspect-ratio: 960 / 540 ≈ 1.777) */
 .mediaFrame {
-    aspect-ratio: 980 / 492;
+    aspect-ratio: 960 / 540;
     width: 100%;
     height: auto;
     display: block;
