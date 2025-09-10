@@ -94,7 +94,7 @@ const GameShowcaseSection: React.FC<GameShowcaseProps> = ({ title, subtitle, gam
                                 size="md"
                                 className="rounded-full"
                             >
-                                SABAPlay Demo
+                                SABAPLAY Demo
                             </Button>
                         </div>
                     </div>

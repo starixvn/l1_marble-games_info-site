@@ -1,10 +1,9 @@
-import Button from "@/components/ui/button";
 import { LINK_LIVE_DEMO } from "@/constants";
 import { HeroSectionProps } from "@/types";
 import React, { useState } from "react";
 import styles from "./hero-section.module.scss";
 
-const HeroSection: React.FC<HeroSectionProps> = ({ title, description, ctaText, ctaHref }) => {
+const HeroSection: React.FC<HeroSectionProps> = ({ title, description }) => {
     const [isIframeLoaded, setIsIframeLoaded] = useState(false);
     return (
         <section id="home" className={`${styles.heroSection} text-white text-center py-16`}>
@@ -16,11 +15,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description, ctaText, 
                 >
                     {description}
                 </p>
-                <div className={styles.animateFadeInUp} style={{ animationDelay: "0.4s" }}>
-                    <Button href={ctaHref} variant="primary" size="lg" className="font-bold rounded-full">
-                        {ctaText}
-                    </Button>
-                </div>
+
                 <div className={`${styles.imageWrapper} mt-10 md:mt-12 ${styles.animateFadeInUp}`} style={{ animationDelay: "0.6s" }}>
                     <img
                         src="/images/hero/demo_marble_game.png?v=1"

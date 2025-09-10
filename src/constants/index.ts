@@ -47,21 +47,21 @@ export const GAMES: GameShowcase[] = [
         image: "/images/game-showcase/orginal.png",
         title: "Original Theme",
         description: "The original game design, with a colorful cartoon stadium and playful match visuals.",
-        alt: "SABA Marble Original Theme",
+        alt: "SABA Marbles Original Theme",
         link: "https://www.youtube.com/embed/6_7AdtN9xS8?si=En0zikNMT3pjKw1B",
     },
     {
         image: "/images/game-showcase/galaxy.png",
         title: "Galaxy Theme",
         description: "A futuristic, cosmic design for a modern gaming experience.",
-        alt: "SABA Marble Galaxy Theme",
+        alt: "SABA Marbles Galaxy Theme",
         link: "https://www.youtube.com/embed/aGZnm-0Yulo?si=plvMrLOZV09igrTK",
     },
     {
         image: "/images/game-showcase/premier_league.png",
         title: "Premier League Theme",
         description: "Inspired by the English Premier League, designed for true football fans.",
-        alt: "SABA Marble Premier League Theme",
+        alt: "SABA Marbles Premier League Theme",
         link: "https://www.youtube.com/embed/M1bW2xtaikY?si=h-u49guHuypNyE5C",
     },
 ];
@@ -69,7 +69,7 @@ export const GAMES: GameShowcase[] = [
 // Demo links
 export const DEMO_LINKS = {
     sabaSports: "https://g943gp.pvm5062.net/en-US/live/9994",
-    sabaPlay: "https://client.playvgames.com/site-114/",
+    sabaPlay: "https://www.sabaplay.top/13506",
 };
 
 // About section data
@@ -109,15 +109,14 @@ export const COPYRIGHT_TEXT = "© 2025 SABA Marbles. All Rights Reserved.";
 export const HERO_DATA = {
     title: "Experience the Thrill of RNG Marble Games",
     description:
-        "SABA Marble, powered by SABAPLAY, is a revolutionary RNG-simulated sports game designed for fast-paced entertainment and betting. Perfect for sports lovers seeking instant action and quick wins.",
-    ctaText: "Live Demo",
+        "SABA Marbles, powered by SABAPLAY, is a revolutionary RNG-simulated sports game designed for fast-paced entertainment and betting. Perfect for sports lovers seeking instant action and quick wins.",
     ctaHref: "#showcase",
 };
 
 // Section titles and subtitles
 export const SECTION_TITLES = {
     strengths: {
-        title: "Why Choose SABA Marble?",
+        title: "Why Choose SABA Marbles?",
         subtitle: "The competitive advantages that set us apart.",
     },
     services: {

@@ -6,38 +6,17 @@ describe("HeroSection Component", () => {
         // Arrange
 
         // Act
-        render(
-            <HeroSection
-                title={mockData.hero.title}
-                description={mockData.hero.description}
-                ctaText={mockData.hero.ctaText}
-                ctaHref={mockData.hero.ctaHref}
-            />
-        );
+        render(<HeroSection title={mockData.hero.title} description={mockData.hero.description} />);
 
         // Assert
         expect(screen.getByText(mockData.hero.title)).toBeInTheDocument();
         expect(screen.getByText(mockData.hero.description)).toBeInTheDocument();
-        expect(screen.getByText(mockData.hero.ctaText)).toBeInTheDocument();
     });
-
-    it("renders call-to-action link", () => {
-        // Arrange
-
-        // Act
-        render(<HeroSection title="Test Title" description="Test description" ctaText="Get Started" ctaHref="/get-started" />);
-
-        // Assert
-        const ctaLink = screen.getByRole("link", { name: /get started/i });
-        expect(ctaLink).toBeInTheDocument();
-        expect(ctaLink).toHaveAttribute("href", "/get-started");
-    });
-
     it("renders without optional props", () => {
         // Arrange
 
         // Act
-        render(<HeroSection title="Test Title" description="Test description" ctaText="Get Started" ctaHref="/get-started" />);
+        render(<HeroSection title="Test Title" description="Test description" />);
 
         // Assert
         expect(screen.getByText("Test Title")).toBeInTheDocument();
