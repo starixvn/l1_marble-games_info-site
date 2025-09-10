@@ -1,4 +1,7 @@
 import { AboutSection, GameShowcase, NavLink, ServiceCard, SocialLink } from "@/types";
+import imgGalaxy from "@images/game-showcase/galaxy.png";
+import imgOriginal from "@images/game-showcase/orginal.png";
+import imgPremier from "@images/game-showcase/premier_league.png";
 import { STRENGTHS_DATA } from "./strengths";
 
 // Navigation links
@@ -44,21 +47,21 @@ export const SERVICES: ServiceCard[] = [
 // Our Games data
 export const GAMES: GameShowcase[] = [
     {
-        image: "/images/game-showcase/orginal.png",
+        image: imgOriginal,
         title: "Original Theme",
         description: "The original game design, with a colorful cartoon stadium and playful match visuals.",
         alt: "SABA Marbles Original Theme",
         link: "https://www.youtube.com/embed/6_7AdtN9xS8?si=En0zikNMT3pjKw1B",
     },
     {
-        image: "/images/game-showcase/galaxy.png",
+        image: imgGalaxy,
         title: "Galaxy Theme",
         description: "A futuristic, cosmic design for a modern gaming experience.",
         alt: "SABA Marbles Galaxy Theme",
         link: "https://www.youtube.com/embed/aGZnm-0Yulo?si=plvMrLOZV09igrTK",
     },
     {
-        image: "/images/game-showcase/premier_league.png",
+        image: imgPremier,
         title: "Premier League Theme",
         description: "Inspired by the English Premier League, designed for true football fans.",
         alt: "SABA Marbles Premier League Theme",
@@ -110,6 +113,7 @@ export const HERO_DATA = {
     title: "Experience the Thrill of RNG Marble Games",
     description:
         "SABA Marbles, powered by SABAPLAY, is a revolutionary RNG-simulated sports game designed for fast-paced entertainment and betting. Perfect for sports lovers seeking instant action and quick wins.",
+    ctaText: "Live Demo",
     ctaHref: "#showcase",
 };
 

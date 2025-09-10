@@ -13,12 +13,14 @@ describe("GameShowcaseSection Component", () => {
             title: "Space Adventure",
             description: "Explore the galaxy and conquer planets.",
             alt: "Space Adventure cover",
+            link: "/demo/space-adventure",
         },
         {
             image: "/images/game-2.png",
             title: "Jungle Run",
             description: "Run through the jungle and avoid traps.",
             alt: "Jungle Run cover",
+            link: "/demo/jungle-run",
         },
     ];
 

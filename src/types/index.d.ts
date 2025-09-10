@@ -57,6 +57,8 @@ export interface HeaderProps {
 export interface HeroSectionProps {
     title: string;
     description: string;
+    ctaText?: string;
+    ctaHref?: string;
 }
 
 export interface StrengthsSectionProps {

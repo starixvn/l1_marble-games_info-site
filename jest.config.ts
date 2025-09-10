@@ -6,6 +6,8 @@ const config: Config = {
     testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/src/app/api/"],
     moduleNameMapper: {
         "^@/(.*)$": "<rootDir>/src/$1",
+        "^@images/.+\\.(png|jpg|jpeg|gif|svg|webp|avif)$": "<rootDir>/src/tests/__mocks__/fileMock.cjs",
+        "^.+\\.(png|jpg|jpeg|gif|svg|webp|avif|woff|woff2|ttf)$": "<rootDir>/src/tests/__mocks__/fileMock.cjs",
         "\\.(css|scss)$": "identity-obj-proxy",
     },
     collectCoverageFrom: ["src/**/*.{js,jsx,ts,tsx}", "!src/**/*.d.ts"],

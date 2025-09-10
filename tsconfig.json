@@ -17,7 +17,8 @@
             "@/*": ["./src/*"],
             "@pages/*": ["./src/pages/*"],
             "@layouts/*": ["./src/layouts/*"],
-            "@routes/*": ["./src/routes/*"]
+            "@routes/*": ["./src/routes/*"],
+            "@images/*": ["./src/assets/images/*"]
         },
         "types": ["vite/client", "node"]
     },

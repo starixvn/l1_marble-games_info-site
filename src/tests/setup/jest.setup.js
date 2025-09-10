@@ -32,3 +32,6 @@ if (!globalThis.TextEncoder) {
 if (!globalThis.TextDecoder) {
     globalThis.TextDecoder = TextDecoder;
 }
+
+// Provide a default export for file mocks when directly required (fallback)
+jest.mock("@images/logo.png", () => "logo.png", { virtual: true });
