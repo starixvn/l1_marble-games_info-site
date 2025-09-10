@@ -21,6 +21,5 @@ describe("HeroSection Component", () => {
         // Assert
         expect(screen.getByText("Test Title")).toBeInTheDocument();
         expect(screen.getByText("Test description")).toBeInTheDocument();
-        expect(screen.getByRole("link")).toBeInTheDocument();
     });
 });

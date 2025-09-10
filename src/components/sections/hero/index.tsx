@@ -1,10 +1,10 @@
-import { HERO_DATA, LINK_LIVE_DEMO } from "@/constants";
+import { LINK_LIVE_DEMO } from "@/constants";
 import { HeroSectionProps } from "@/types";
 import heroImg from "@images/hero/demo_marble_game.png";
 import React, { useState } from "react";
 import styles from "./hero-section.module.scss";
 
-const HeroSection: React.FC<HeroSectionProps> = ({ title, description, ctaText = HERO_DATA.ctaText, ctaHref = HERO_DATA.ctaHref }) => {
+const HeroSection: React.FC<HeroSectionProps> = ({ title, description }) => {
     const [isIframeLoaded, setIsIframeLoaded] = useState(false);
     return (
         <section id="home" className={`${styles.heroSection} text-white text-center py-16`}>
@@ -16,16 +16,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description, ctaText =
                 >
                     {description}
                 </p>
-                {ctaHref && ctaText ? (
-                    <div className={styles.animateFadeInUp} style={{ animationDelay: "0.4s" }}>
-                        <a
-                            href={ctaHref}
-                            className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
-                        >
-                            {ctaText}
-                        </a>
-                    </div>
-                ) : null}
 
                 <div className={`${styles.imageWrapper} mt-10 md:mt-12 ${styles.animateFadeInUp}`} style={{ animationDelay: "0.6s" }}>
                     <img

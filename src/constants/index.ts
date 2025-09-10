@@ -72,7 +72,7 @@ export const GAMES: GameShowcase[] = [
 // Demo links
 export const DEMO_LINKS = {
     sabaSports: "https://g943gp.pvm5062.net/en-US/live/9994",
-    sabaPlay: "https://www.sabaplay.top/13506",
+    sabaPlay: "https://www.sabaplay.top/13510",
 };
 
 // About section data
