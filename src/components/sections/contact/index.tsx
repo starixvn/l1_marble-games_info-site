@@ -33,7 +33,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ title, subtitle, onSubm
     };
 
     return (
-        <section id="contact" className={`${styles.sectionPadding} bg-gray-900`}>
+        <section id="contact" className={`${styles.sectionPadding}`}>
             <div className="container mx-auto px-6">
                 <div className="text-center mb-12">
                     <h2 className={`${styles.headingLg} text-white mb-2`}>{title}</h2>

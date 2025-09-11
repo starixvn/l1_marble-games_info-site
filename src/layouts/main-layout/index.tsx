@@ -9,7 +9,7 @@ interface MainLayoutProps {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     return (
-        <div className="min-h-screen bg-gray-900">
+        <div className="min-h-screen">
             <Header navLinks={NAV_LINKS} />
             <main>{children}</main>
             <Footer copyright={COPYRIGHT_TEXT} />

@@ -8,7 +8,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ title, subtitle, about }) =
             <div className="container mx-auto px-6">
                 <div className={`${styles.panel} max-w-5xl mx-auto`}>
                     <div className="text-center mb-10">
-                        <h2 className={`${styles.headingLg} text-gradient-brand-red mb-6`}>{title}</h2>
+                        <h2 className={`${styles.headingLg} text-gradient-brand-white mb-6`}>{title}</h2>
                         <p className="text-brand mt-2">{subtitle}</p>
                     </div>
 

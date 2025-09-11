@@ -4,7 +4,7 @@
 :root {
     --primary-color: #3b82f6;
     --primary-hover: #2563eb;
-    --background-dark: #12161b;
+    --background-dark: oklch(14.5% 0 0);
     --background-card: #1f2937;
     --border-color: #374151;
     --text-primary: #e5e7eb;
@@ -14,13 +14,26 @@
     --brand-text: #ececec;
     --brand-red-start: #ff3f3f; // Figma stop 0%
     --brand-red-end: #830000; // Figma stop 100%
+    --color-black-80: #000c;
+    --color-black-500: #ffffff05;
+    --tw-gradient-stops: oklch(50.5% 0.213 27.518);
+    --color-red-700: oklch(50.5% 0.213 27.518);
+    --color-brand-primary: oklch(57.7% 0.245 27.325);
+    --color-neutral-950: oklch(14.5% 0 0);
 }
 
 // Base styles
 body {
-    font-family: "Roboto", "Inter", sans-serif;
+    font-family: "OpenSans", "Inter", sans-serif;
     background-color: var(--background-dark);
     color: var(--brand-text);
+}
+
+// Headings typography
+h1,
+h2,
+h3 {
+    font-family: "Barlow Condensed", "OpenSans", "Inter", sans-serif;
 }
 
 // Scrollbar styles
@@ -49,16 +62,34 @@ body {
 }
 
 @font-face {
-    font-family: "Roboto";
-    src: url("/fonts/roboto/roboto-regular.woff2") format("woff2"), url("/fonts/roboto/roboto-regular.woff") format("woff");
+    font-family: "OpenSans";
+    src: url("/fonts/open-sans/open-sans-regular.woff2") format("woff2"), url("/fonts/open-sans/open-sans-regular.woff") format("woff");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Roboto";
-    src: url("/fonts/roboto/roboto-bold.woff2") format("woff2"), url("/fonts/roboto/roboto-bold.woff") format("woff");
+    font-family: "OpenSans";
+    src: url("/fonts/open-sans/open-sans-bold.woff2") format("woff2"), url("/fonts/open-sans/open-sans-bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Barlow Condensed";
+    src: url("/fonts/barlow-condensed/barlow-condensed-regular.woff2") format("woff2"),
+        url("/fonts/barlow-condensed/barlow-condensed-regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Barlow Condensed";
+    src: url("/fonts/barlow-condensed/barlow-condensed-bold.woff2") format("woff2"),
+        url("/fonts/barlow-condensed/barlow-condensed-bold.woff") format("woff");
     font-weight: 700;
     font-style: normal;
     font-display: swap;

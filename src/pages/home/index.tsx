@@ -1,4 +1,5 @@
 import AboutSection from "@/components/sections/about";
+import GameDemoSection from "@/components/sections/game-demo";
 import GameShowcaseSection from "@/components/sections/game-showcase";
 import HeroSection from "@/components/sections/hero";
 import ServicesSection from "@/components/sections/services";
@@ -21,6 +22,8 @@ const HomePage: React.FC = () => {
                 games={GAMES}
                 demoLinks={DEMO_LINKS}
             />
+
+            <GameDemoSection demoLinks={DEMO_LINKS} />
 
             <AboutSection title={SECTION_TITLES.about.title} subtitle={SECTION_TITLES.about.subtitle} about={ABOUT_DATA} />
         </>

@@ -16,14 +16,14 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
     };
 
     return (
-        <header className="bg-[#303030] backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
+        <header className={`${styles.sectionHeader} backdrop-blur-sm sticky top-0 z-50 border-b border-gray-7001`}>
             <nav className="container mx-auto px-6 py-1 flex justify-between items-center">
                 <a href="#home" className="inline-flex items-center" aria-label="SABA Marbles home">
                     <img src={logoImg} alt="SABA Marbles" className="h-auto w-auto" />
                 </a>
 
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex items-center space-x-8 text-base">
+                <div className="hidden md:flex items-center space-x-8 text-lg">
                     {navLinks.map((link, index) =>
                         link.isButton ? (
                             <Button
@@ -32,8 +32,8 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 variant="primary"
-                                size="sm"
-                                className="font-semibold"
+                                size="lg"
+                                className="font-bold text-lg"
                             >
                                 {link.label}
                             </Button>
@@ -41,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
                             <a
                                 key={`nav-link-${index}-${link.href}`}
                                 href={link.href}
-                                className={`${styles.navLink} text-brand hover:text-white text-base`}
+                                className={`${styles.navLink} text-brand hover:text-white text-lg font-bold`}
                                 onClick={closeMobileMenu}
                             >
                                 {link.label}
@@ -75,7 +75,7 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
                     <a
                         key={`mobile-nav-${index}-${link.href}`}
                         href={link.href}
-                        className="block py-2 px-4 text-base text-brand hover:bg-gray-700 hover:text-white transition-colors"
+                        className="block py-2 px-4 text-lg font-bold text-brand hover:bg-gray-700 hover:text-white transition-colors"
                         onClick={closeMobileMenu}
                     >
                         {link.label}

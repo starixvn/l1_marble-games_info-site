@@ -1,9 +1,1 @@
-/* eslint-env browser */
-/* global window */
-window.envConfig = {
-    sentry: {
-        dsn: "",
-        environment: "DEV",
-    },
-    system: "MG",
-};
+console.error("Wrong mapping config, please check your deployment");

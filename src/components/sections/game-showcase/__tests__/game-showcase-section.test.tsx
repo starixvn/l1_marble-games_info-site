@@ -48,20 +48,6 @@ describe("GameShowcaseSection Component", () => {
         }
     });
 
-    it("renders demo links with correct hrefs", () => {
-        // Arrange
-
-        // Act
-        render(<GameShowcaseSection title="Title" subtitle="Subtitle" games={games} demoLinks={demoLinks} />);
-
-        // Assert
-        const sportsLink = screen.getByRole("link", { name: /saba sports demo/i });
-        const playLink = screen.getByRole("link", { name: /sabaplay demo/i });
-
-        expect(sportsLink).toHaveAttribute("href", demoLinks.sabaSports);
-        expect(playLink).toHaveAttribute("href", demoLinks.sabaPlay);
-    });
-
     it("falls back to placeholder image on error", () => {
         // Arrange
 

@@ -27,10 +27,10 @@ const STRENGTH_ICONS = [
 
 const StrengthsSection: React.FC<StrengthsSectionProps> = ({ title, subtitle, strengths }) => {
     return (
-        <section id="strengths" className={`${styles.sectionPadding} bg-gray-900`}>
+        <section id="strengths" className={`${styles.sectionPadding} py-16`}>
             <div className="container mx-auto px-6">
                 <div className="text-center mb-12">
-                    <h2 className={`${styles.headingLg} text-gradient-brand-red mb-6`}>{title}</h2>
+                    <h2 className={`${styles.headingLg} text-gradient-brand-white pb-8`}>{title}</h2>
                     <p className={`${styles.textBody} text-brand mt-2`}>{subtitle}</p>
                 </div>
 

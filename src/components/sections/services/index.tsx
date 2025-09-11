@@ -8,7 +8,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ title, subtitle, serv
         <section id="services" className={styles.sectionPadding}>
             <div className="container mx-auto px-6">
                 <div className="text-center mb-12">
-                    <h2 className={`${styles.headingLg} text-gradient-brand-red mb-6 font-bold`}>{title}</h2>
+                    <h2 className={`${styles.headingLg} text-gradient-brand-white mb-6 font-bold`}>{title}</h2>
                     <p className={`${styles.subtitle} text-brand mt-2`}>{subtitle}</p>
                 </div>
 

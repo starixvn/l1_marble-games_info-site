@@ -20,11 +20,9 @@
         color: var(--brand-red-start);
     }
 
-    .text-gradient-brand-red {
-        background-image: linear-gradient(90deg, var(--brand-red-start) 0%, var(--brand-red-end) 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+    .text-gradient-brand-white {
+        color: oklch(98.5% 0 0);
+        text-transform: uppercase;
     }
 
     /* Override container max-width to 1200px (75rem) for xl and 2xl */

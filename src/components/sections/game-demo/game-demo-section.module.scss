@@ -1,0 +1,29 @@
+@reference "tailwindcss";
+
+.sectionPadding {
+    --tw-gradient-position: in oklab;
+    background-image: radial-gradient(var(--tw-gradient-stops));
+}
+
+/* 48px => 3rem on all screens per mockup */
+.headingLg {
+    font-size: 3rem;
+    @apply font-bold;
+}
+
+/* 18px => 1.125rem for general body text in the section */
+.textBase {
+    font-size: 1.125rem;
+}
+
+.demoButton {
+    background-color: var(--color-neutral-950) !important;
+    color: #fff !important;
+    padding: 16px 24px !important;
+
+    &:hover,
+    &:active {
+        background-color: #fff !important;
+        color: #000 !important;
+    }
+}

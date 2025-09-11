@@ -1,3 +1,8 @@
+.sectionHeader {
+    border-bottom: 3px solid var(--color-brand-primary);
+    background-color: var(--color-black-80);
+}
+
 .navLink {
     position: relative;
     transition: color 0.3s;
