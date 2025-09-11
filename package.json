@@ -17,10 +17,10 @@
         "obfuscate": "ts-node --project tsconfig.scripts.json configs/config-obfuscator.ts"
     },
     "dependencies": {
-        "@sentry/react": "^10.5.0",
+        "@sentry/react": "10.5.0",
         "react": "19.1.1",
         "react-dom": "19.1.1",
-        "react-router-dom": "^7.8.1"
+        "react-router-dom": "7.8.2"
     },
     "devDependencies": {
         "@eslint/eslintrc": "3.3.1",
