@@ -8,7 +8,13 @@ export default function App() {
     return (
         <BrowserRouter>
             <MainLayout>
-                <Suspense fallback={<div className="text-white p-6">Loading...</div>}>
+                <Suspense
+                    fallback={
+                        <div className="container mx-auto px-6">
+                            <div className="text-white p-6 text-center">Loading...</div>
+                        </div>
+                    }
+                >
                     <Routes>
                         {routes.map((route) => (
                             <Route key={route.path} path={route.path} element={route.element} />
