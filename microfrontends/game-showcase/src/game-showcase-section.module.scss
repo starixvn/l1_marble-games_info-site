@@ -1,0 +1,35 @@
+@reference "tailwindcss";
+
+.sectionPadding {
+    background-color: var(--color-black-500);
+}
+
+/* 48px => 3rem on all screens per mockup */
+.headingLg {
+    font-size: 3rem;
+    @apply font-bold;
+}
+
+/* 28px => 1.75rem for card titles */
+.headingMd {
+    font-size: 1.75rem;
+    @apply font-bold;
+}
+
+/* Utility classes for paragraph sizes in this section */
+/* 14px => 0.875rem for small descriptions */
+.textSm {
+    font-size: 0.875rem;
+}
+
+/* 18px => 1.125rem for general body text in the section */
+.textBase {
+    font-size: 1.125rem;
+}
+
+.gridShowcase {
+    @apply grid gap-6;
+    @media (min-width: 768px) {
+        @apply grid-cols-3;
+    }
+}

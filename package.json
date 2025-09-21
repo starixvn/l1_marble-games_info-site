@@ -14,7 +14,10 @@
         "test-watch": "jest --watch",
         "test-coverage": "jest --coverage",
         "test-ci": "jest --ci --coverage --watchAll=false",
-        "obfuscate": "ts-node --project tsconfig.scripts.json configs/config-obfuscator.ts"
+        "obfuscate": "ts-node --project tsconfig.scripts.json configs/config-obfuscator.ts",
+        "dev:microfrontends": "./scripts/start-microfrontends.sh",
+        "install:microfrontends": "cd microfrontends/hero && yarn install && cd ../about && yarn install && cd ../services && yarn install && cd ../game-showcase && yarn install",
+        "build:microfrontends": "cd microfrontends/hero && yarn build && cd ../about && yarn build && cd ../services && yarn build && cd ../game-showcase && yarn build"
     },
     "dependencies": {
         "@sentry/react": "10.5.0",
@@ -24,6 +27,7 @@
     },
     "devDependencies": {
         "@eslint/eslintrc": "3.3.1",
+        "@originjs/vite-plugin-federation": "^1.4.1",
         "@tailwindcss/postcss": "4.1.12",
         "@tailwindcss/vite": "4.1.12",
         "@testing-library/dom": "10.4.1",

@@ -20,7 +20,7 @@ const Button: React.FC<ButtonProps> = ({
         secondary: "bg-gray-700 text-white hover:bg-gray-600 hover:shadow-lg",
     };
 
-    const sizeClasses = {
+    const re = {
         sm: "py-2 px-4 text-sm",
         md: "py-3 px-6 text-base",
         lg: styles.btnPrimaryLg,

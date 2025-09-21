@@ -1,0 +1,51 @@
+@reference "tailwindcss";
+
+.sectionPadding {
+    padding-bottom: 64px;
+    padding-top: 64px;
+}
+
+.headingLg {
+    font-size: 48px;
+    line-height: 1.15;
+    @apply font-bold;
+}
+
+.subtitle {
+    font-size: 18px;
+}
+
+.headingMd {
+    font-size: 28px;
+    line-height: 1.25;
+    @apply font-bold;
+}
+
+.gridServices {
+    @apply grid gap-6 items-stretch;
+    @media (min-width: 1024px) {
+        @apply grid-cols-2;
+    }
+}
+
+.cardTitle {
+    font-size: 28px;
+    line-height: 1.25;
+    @apply font-bold text-white;
+}
+
+.cardDescription {
+    font-size: 14px;
+}
+
+.features {
+    @apply grid grid-cols-2 sm:grid-cols-3 gap-4;
+}
+
+.featureText {
+    font-size: 14px;
+}
+
+.serviceCard {
+    min-height: 342px;
+}

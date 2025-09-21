@@ -1,0 +1,54 @@
+@reference "tailwindcss";
+
+.overlay {
+    @apply fixed inset-0 bg-black/60 z-[1000] flex items-center justify-center p-4;
+}
+
+.contentWrapper {
+    width: 100%;
+    max-width: 1080px;
+    position: relative;
+}
+
+/* Maintain ~1080x608 while responsive */
+.content {
+    width: 100%;
+    aspect-ratio: 1080 / 608;
+    background: #000;
+    @apply rounded-xl overflow-hidden shadow-2xl;
+}
+
+.closeButton {
+    @apply absolute -top-10 -right-10 z-10 w-8 h-8 rounded-full inline-flex items-center justify-center transition-colors;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--brand-text);
+}
+
+.closeButton:hover {
+    @apply bg-white/5;
+    color: var(--brand-text);
+}
+
+.closeButton:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-white/50;
+}
+
+.closeButton::before,
+.closeButton::after {
+    content: "";
+    position: absolute;
+    width: 32px;
+    height: 2px;
+    background-color: currentColor;
+    border-radius: 1px;
+}
+
+.closeButton::before {
+    transform: rotate(45deg);
+}
+
+.closeButton::after {
+    transform: rotate(-45deg);
+}
