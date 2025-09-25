@@ -20,11 +20,11 @@ export const STRENGTHS_DATA: Omit<StrengthCard, "icon">[] = [
         alt: "Seamless Integration, One-Time Setup",
     },
     {
-        title: "SABA Sports & SABA Play Integrated",
+        title: "SABA Sports & SABAPLAY Integrated",
         description:
             "Our product is now fully integrated with SABA SPORTS and SABAPLAY — two leading game providers — delivering trusted performance, wider reach, and a seamless experience.",
         image: iconIntegrated,
-        alt: "SABA Sports & SABA Play Integrated",
+        alt: "SABA Sports & SABAPLAY Integrated",
     },
     {
         title: "Proven Success & Growth",
