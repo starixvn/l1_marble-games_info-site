@@ -1,5 +1,6 @@
 import { routes } from "@/routes";
 import { render, screen } from "@/utils/test-utils";
+import { Suspense } from "react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 
 describe("App Routes", () => {
@@ -7,11 +8,13 @@ describe("App Routes", () => {
         // Arrange
         const App = () => (
             <MemoryRouter initialEntries={["/"]}>
-                <Routes>
-                    {routes.map((r) => (
-                        <Route key={r.path} path={r.path} element={r.element} />
-                    ))}
-                </Routes>
+                <Suspense fallback={null}>
+                    <Routes>
+                        {routes.map((r) => (
+                            <Route key={r.path} path={r.path} element={r.element} />
+                        ))}
+                    </Routes>
+                </Suspense>
             </MemoryRouter>
         );
 
@@ -26,11 +29,13 @@ describe("App Routes", () => {
         // Arrange
         const App = () => (
             <MemoryRouter initialEntries={["/unknown"]}>
-                <Routes>
-                    {routes.map((r) => (
-                        <Route key={r.path} path={r.path} element={r.element} />
-                    ))}
-                </Routes>
+                <Suspense fallback={null}>
+                    <Routes>
+                        {routes.map((r) => (
+                            <Route key={r.path} path={r.path} element={r.element} />
+                        ))}
+                    </Routes>
+                </Suspense>
             </MemoryRouter>
         );
 
