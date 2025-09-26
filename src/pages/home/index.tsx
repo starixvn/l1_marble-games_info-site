@@ -12,6 +12,8 @@ const HomePage: React.FC = () => {
         <>
             <HeroSection {...HERO_DATA} />
 
+            <GameDemoSection demoLinks={DEMO_LINKS} />
+
             <StrengthsSection title={SECTION_TITLES.strengths.title} subtitle={SECTION_TITLES.strengths.subtitle} strengths={STRENGTHS} />
 
             <ServicesSection title={SECTION_TITLES.services.title} subtitle={SECTION_TITLES.services.subtitle} services={SERVICES} />
@@ -22,8 +24,6 @@ const HomePage: React.FC = () => {
                 games={GAMES}
                 demoLinks={DEMO_LINKS}
             />
-
-            <GameDemoSection demoLinks={DEMO_LINKS} />
 
             <AboutSection title={SECTION_TITLES.about.title} subtitle={SECTION_TITLES.about.subtitle} about={ABOUT_DATA} />
         </>
