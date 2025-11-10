@@ -34,7 +34,7 @@
         "@types/node": "20.19.11",
         "@types/react": "19.1.10",
         "@types/react-dom": "19.1.7",
-        "@vitejs/plugin-react": "5.0.1",
+        "@vitejs/plugin-react": "5.1.0",
         "babel-jest": "30.0.5",
         "cross-env": "10.0.0",
         "eslint": "9.35.0",
