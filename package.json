@@ -37,7 +37,7 @@
         "@vitejs/plugin-react": "5.1.0",
         "babel-jest": "30.0.5",
         "cross-env": "10.0.0",
-        "eslint": "9.35.0",
+        "eslint": "9.39.1",
         "identity-obj-proxy": "3.0.0",
         "javascript-obfuscator": "4.1.1",
         "jest": "30.0.5",
